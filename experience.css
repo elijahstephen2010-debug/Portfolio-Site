@@ -1,0 +1,942 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0a0a;
+    color: #fff8f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header {
+    width: 94%;
+    min-height: 82px;
+
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+
+    margin: 12px auto 0;
+    padding: 8px 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: rgba(5, 5, 5, 0.96);
+
+    border: 1.5px solid #e31b3b;
+    border-radius: 45px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
+
+    animation: navSlide 0.8s ease both;
+
+    transition:
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+header:hover {
+    box-shadow:
+        0 10px 35px rgba(227, 27, 59, 0.14);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.site-logo {
+    width: 180px;
+    min-width: 180px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 75px;
+    height: 65px;
+
+    background-image: url("./chioma-removebg-preview.png");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-end;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.06) rotate(-2deg);
+
+    filter:
+        drop-shadow(0 0 8px rgba(227, 27, 59, 0.35));
+}
+
+.site-name {
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-left: 55px;
+    margin-bottom: 3px;
+
+    white-space: nowrap;
+
+    font-family:
+        "Gill Sans",
+        "Gill Sans MT",
+        Calibri,
+        "Trebuchet MS",
+        sans-serif;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-logo:hover .site-name {
+    color: #e31b3b;
+    transform: translateX(2px);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 10px 0;
+
+    color: #bdbdbd;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background: #e31b3b;
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   ACTIVE EXPERIENCE LINK
+===================================================== */
+
+nav li:nth-child(5) a,
+nav a.active {
+    color: #ffffff;
+}
+
+nav li:nth-child(5) a::after,
+nav a.active::after {
+    width: 100%;
+
+    box-shadow:
+        0 0 10px rgba(227, 27, 59, 0.5);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e31b3b;
+    border-radius: 50%;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: #e31b3b;
+
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   EXPERIENCE PAGE
+===================================================== */
+
+.experience-page {
+    width: 100%;
+    min-height: calc(100vh - 105px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   EXPERIENCE SECTION
+===================================================== */
+
+.experience-section {
+    width: 100%;
+
+    min-height: calc(100vh - 105px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        90px
+        5%
+        70px;
+}
+
+
+/* =====================================================
+   EXPERIENCE CARD
+===================================================== */
+
+.experience-card {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 55px 50px;
+
+    text-align: center;
+
+    background: #111111;
+
+    border: 1px solid #303030;
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    animation:
+        fadeUp 0.9s ease forwards;
+}
+
+
+/* =====================================================
+   EXPERIENCE ICON
+===================================================== */
+
+.experience-icon {
+    width: 72px;
+    height: 72px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1a1a1a;
+
+    border: 1px solid #e31b3b;
+
+    border-radius: 20px;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 0 25px rgba(227, 27, 59, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.experience-icon:hover {
+    transform:
+        translateY(-6px)
+        rotate(-4deg);
+
+    box-shadow:
+        0 0 35px rgba(227, 27, 59, 0.25);
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.section-label {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid #e31b3b;
+
+    border-radius: 30px;
+
+    color: #e31b3b;
+
+    background:
+        rgba(227, 27, 59, 0.04);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.experience-card h1 {
+    color: #ffffff;
+
+    font-size:
+        clamp(45px, 7vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.experience-card h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #e31b3b;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.experience-card p {
+    max-width: 610px;
+
+    margin:
+        0 auto 15px;
+
+    color: #a9a9a9;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding:
+        14px 25px;
+
+    background: #e31b3b;
+
+    border: 1px solid #e31b3b;
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn span {
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.btn:hover {
+    background: transparent;
+
+    color: #e31b3b;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(227, 27, 59, 0.15);
+}
+
+.btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes navSlide {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   TABLET — 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 75px;
+
+        top: 8px;
+
+        margin-top: 8px;
+
+        padding:
+            6px 4%;
+
+        gap: 10px;
+    }
+
+
+    .site-logo {
+        width: 140px;
+        min-width: 140px;
+
+        height: 62px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 57px;
+    }
+
+    .site-name {
+        font-size: 9px;
+
+        margin-left: 42px;
+    }
+
+
+    /* MENU BUTTON */
+
+    .menu-btn {
+        display: flex;
+
+        flex-shrink: 0;
+    }
+
+
+    /* MOBILE NAV */
+
+    nav {
+        position: absolute;
+
+        top: calc(100% + 10px);
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background:
+            rgba(8, 8, 8, 0.98);
+
+        border:
+            1px solid #e31b3b;
+
+        border-radius: 25px;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-12px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    nav.a-res1 {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    nav ul {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+
+        display: block;
+
+        padding: 13px 15px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        text-align: center;
+    }
+
+    nav a:hover {
+        background:
+            rgba(227, 27, 59, 0.08);
+
+        transform: none;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-section {
+        min-height:
+            calc(100vh - 90px);
+
+        padding:
+            80px
+            5%
+            50px;
+    }
+
+    .experience-card {
+        padding:
+            45px 30px;
+    }
+
+    .experience-card h1 {
+        font-size: 52px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE — 425px
+===================================================== */
+
+@media (max-width: 425px) {
+
+    header {
+        width: 94%;
+
+        min-height: 68px;
+
+        top: 6px;
+
+        margin-top: 6px;
+
+        padding:
+            5px 4%;
+
+        border-radius: 30px;
+    }
+
+
+    .site-logo {
+        width: 115px;
+        min-width: 115px;
+
+        height: 55px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .site-name {
+        font-size: 8px;
+
+        margin-left: 36px;
+    }
+
+
+    .menu-btn {
+        width: 39px;
+        height: 39px;
+
+        font-size: 18px;
+    }
+
+
+    nav {
+        top: calc(100% + 8px);
+
+        padding: 15px;
+
+        border-radius: 22px;
+    }
+
+    nav a {
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-section {
+        min-height:
+            calc(100vh - 82px);
+
+        padding:
+            70px
+            5%
+            35px;
+    }
+
+    .experience-card {
+        padding:
+            35px 20px;
+
+        border-radius: 18px;
+    }
+
+
+    .experience-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 27px;
+
+        border-radius: 17px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .section-label {
+        padding:
+            7px 13px;
+
+        font-size: 9px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .experience-card h1 {
+        font-size: 38px;
+
+        line-height: 1.08;
+
+        margin-bottom: 20px;
+    }
+
+
+    .experience-card p {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    .btn {
+        padding:
+            13px 20px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE — 375px
+===================================================== */
+
+@media (max-width: 375px) {
+
+    header {
+        width: 96%;
+
+        min-height: 64px;
+
+        padding:
+            4px 3%;
+
+        border-radius: 28px;
+
+        gap: 5px;
+    }
+
+
+    .site-logo {
+        width: 100px;
+        min-width: 100px;
+
+        height: 50px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 47px;
+    }
+
+    .site-name {
+        font-size: 7px;
+
+        margin-left: 31px;
+    }
+
+
+    .menu-btn {
+        width: 37px;
+        height: 37px;
+
+        font-size: 17px;
+    }
+
+
+    nav {
+        padding: 12px;
+
+        border-radius: 20px;
+    }
+
+    nav a {
+        padding: 11px;
+
+        font-size: 12px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-section {
+        padding:
+            60px
+            4%
+            30px;
+    }
+
+    .experience-card {
+        padding:
+            30px 16px;
+
+        border-radius: 16px;
+    }
+
+
+    .experience-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 24px;
+    }
+
+
+    .section-label {
+        font-size: 8px;
+
+        padding:
+            6px 11px;
+    }
+
+
+    .experience-card h1 {
+        font-size: 32px;
+    }
+
+
+    .experience-card p {
+        font-size: 13px;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        padding:
+            12px 16px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
