@@ -1,7 +1,3 @@
-/* =====================================================
-   MOBILE NAVIGATION
-===================================================== */
-
 const menuBtn = document.querySelector(".menu-btn");
 const mobileNav = document.querySelector("nav");
 
