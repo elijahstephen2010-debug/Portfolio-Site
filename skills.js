@@ -2,17 +2,23 @@ const menuBtn = document.querySelector(".menu-btn");
 const mobileNav = document.querySelector(".a-res");
 
 
-// =========================
-// MOBILE NAVIGATION
-// =========================
+// =====================================================
+// OPEN / CLOSE MENU
+// =====================================================
 
 function nav() {
 
-    if (!mobileNav || !menuBtn) return;
+    if (!mobileNav || !menuBtn) {
+        return;
+    }
+
 
     mobileNav.classList.toggle("a-res1");
 
-    if (mobileNav.classList.contains("a-res1")) {
+
+    if (
+        mobileNav.classList.contains("a-res1")
+    ) {
 
         menuBtn.textContent = "✕";
 
@@ -35,81 +41,113 @@ function nav() {
 }
 
 
-// =========================
+// =====================================================
 // CLOSE MENU WHEN LINK IS CLICKED
-// =========================
+// =====================================================
 
-const navLinks = document.querySelectorAll(".a-res a");
+if (mobileNav) {
 
-navLinks.forEach(function (link) {
+    const navLinks =
+        mobileNav.querySelectorAll("a");
 
-    link.addEventListener("click", function () {
 
-        mobileNav.classList.remove("a-res1");
+    navLinks.forEach(function (link) {
 
-        menuBtn.classList.remove("active");
+        link.addEventListener(
+            "click",
+            function () {
 
-        menuBtn.textContent = "☰";
+                mobileNav.classList.remove(
+                    "a-res1"
+                );
 
-        menuBtn.setAttribute(
-            "aria-label",
-            "Open navigation menu"
+
+                if (menuBtn) {
+
+                    menuBtn.textContent = "☰";
+
+                    menuBtn.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                }
+
+            }
         );
 
     });
 
-});
+}
 
 
-// =========================
+// =====================================================
 // CLOSE MENU WHEN CLICKING OUTSIDE
-// =========================
+// =====================================================
 
-document.addEventListener("click", function (event) {
+document.addEventListener(
+    "click",
+    function (event) {
 
-    if (!mobileNav || !menuBtn) return;
-
-    if (
-        mobileNav.classList.contains("a-res1") &&
-        !mobileNav.contains(event.target) &&
-        !menuBtn.contains(event.target)
-    ) {
-
-        mobileNav.classList.remove("a-res1");
-
-        menuBtn.classList.remove("active");
-
-        menuBtn.textContent = "☰";
-
-        menuBtn.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
-
-    }
-
-});
+        if (!mobileNav || !menuBtn) {
+            return;
+        }
 
 
-// =========================
-// RESET NAV WHEN SCREEN BECOMES DESKTOP
-// =========================
+        if (
+            mobileNav.classList.contains("a-res1") &&
+            !mobileNav.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ) {
 
-window.addEventListener("resize", function () {
+            mobileNav.classList.remove(
+                "a-res1"
+            );
 
-    if (window.innerWidth > 768) {
 
-        mobileNav.classList.remove("a-res1");
+            menuBtn.textContent = "☰";
 
-        menuBtn.classList.remove("active");
+            menuBtn.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
 
-        menuBtn.textContent = "☰";
-
-        menuBtn.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
+        }
 
     }
+);
 
-});
+
+// =====================================================
+// CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+// =====================================================
+
+window.addEventListener(
+    "resize",
+    function () {
+
+        if (
+            window.innerWidth > 768 &&
+            mobileNav
+        ) {
+
+            mobileNav.classList.remove(
+                "a-res1"
+            );
+
+
+            if (menuBtn) {
+
+                menuBtn.textContent = "☰";
+
+                menuBtn.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            }
+
+        }
+
+    }
+);

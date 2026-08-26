@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projects</title>
+    <title>Projects | Dynamic Design</title>
 
     <link rel="stylesheet" href="./project.css">
 </head>
@@ -27,7 +27,7 @@
         </div>
 
 
-        <nav>
+        <nav class="a-res">
 
             <ul>
 
@@ -50,7 +50,7 @@
                 </li>
 
                 <li>
-                    <a href="./project.html">
+                    <a href="./project.html" class="active">
                         Project
                     </a>
                 </li>
@@ -76,7 +76,7 @@
 
         <button
             class="menu-btn"
-            aria-label="Open menu"
+            aria-label="Open navigation menu"
             onclick="nav()"
         >
             ☰
@@ -85,28 +85,37 @@
     </header>
 
 
-
     <!-- =========================
          MAIN
     ========================== -->
 
-    <main>
-
-        <section class="projects-section">
+    <main class="project-page">
 
 
-            <div class="coming-soon">
+        <!-- =========================
+             PROJECT SECTION
+        ========================== -->
+
+        <section class="project-section">
+
+            <div class="project-card">
 
 
-                <span class="icon">
-                    🚀
-                </span>
+                <!-- ICON -->
 
+                <div class="project-icon">
+                    💻
+                </div>
+
+
+                <!-- LABEL -->
 
                 <span class="section-label">
-                    PROJECTS
+                    MY PROJECTS
                 </span>
 
+
+                <!-- TITLE -->
 
                 <h1>
                     Projects
@@ -114,34 +123,51 @@
                 </h1>
 
 
+                <!-- DESCRIPTION -->
+
                 <p>
-                    I'm currently working on exciting projects
-                    and documenting my journey. New projects
-                    will be added here soon.
+                    I'm currently working on building and improving
+                    my projects as I continue my journey in frontend
+                    development and graphic design.
+                </p>
+
+                <p>
+                    My completed projects will be added here soon.
+                    This section will showcase real websites,
+                    designs and other digital products I've created.
                 </p>
 
 
-                <p>
-                    Stay tuned and check back later to see
-                    what I've been building.
-                </p>
+                <!-- PROJECT STATUS -->
 
+                <div class="project-status">
+
+                    <div class="status-dot"></div>
+
+                    <span>
+                        Projects are currently in development
+                    </span>
+
+                </div>
+
+
+                <!-- BUTTON -->
 
                 <a
-                    href="./index.html"
+                    href="./contact.html"
                     class="btn"
                 >
-                    Back to Home
+                    Let's Work Together
+                    <span>→</span>
                 </a>
 
             </div>
 
         </section>
 
+
     </main>
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="./project.js"></script>
 

@@ -1,14 +1,10 @@
-// =========================================================
-// MOBILE NAVIGATION
-// =========================================================
-
 const menuBtn = document.querySelector(".menu-btn");
 const mobileNav = document.querySelector(".a-res");
 
 
-// =========================================================
-// OPEN / CLOSE MENU
-// =========================================================
+/* =====================================================
+   OPEN / CLOSE MENU
+===================================================== */
 
 function nav() {
 
@@ -18,14 +14,30 @@ function nav() {
 
     mobileNav.classList.toggle("a-res1");
 
-    menuBtn.classList.toggle("active");
+    if (mobileNav.classList.contains("a-res1")) {
 
+        menuBtn.textContent = "✕";
+
+        menuBtn.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+
+    } else {
+
+        menuBtn.textContent = "☰";
+
+        menuBtn.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+    }
 }
 
 
-// =========================================================
-// CLOSE MENU WHEN A LINK IS CLICKED
-// =========================================================
+/* =====================================================
+   CLOSE MENU WHEN LINK IS CLICKED
+===================================================== */
 
 if (mobileNav) {
 
@@ -44,57 +56,62 @@ if (mobileNav) {
 
                 if (menuBtn) {
 
-                    menuBtn.classList.remove(
-                        "active"
+                    menuBtn.textContent = "☰";
+
+                    menuBtn.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
                     );
-
                 }
-
             }
         );
-
     });
-
 }
 
+
+/* =====================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+===================================================== */
 
 document.addEventListener(
     "click",
     function (event) {
 
-        if (!menuBtn || !mobileNav) {
+        if (!mobileNav || !menuBtn) {
             return;
         }
 
         if (
-            !menuBtn.contains(event.target) &&
-            !mobileNav.contains(event.target)
+            mobileNav.classList.contains("a-res1") &&
+            !mobileNav.contains(event.target) &&
+            !menuBtn.contains(event.target)
         ) {
 
             mobileNav.classList.remove(
                 "a-res1"
             );
 
-            menuBtn.classList.remove(
-                "active"
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+                "aria-label",
+                "Open navigation menu"
             );
-
         }
-
     }
 );
 
 
-// =========================================================
-// CLOSE MENU WHEN SCREEN BECOMES DESKTOP
-// =========================================================
+/* =====================================================
+   CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+===================================================== */
 
 window.addEventListener(
     "resize",
     function () {
 
         if (
-            window.innerWidth > 425 &&
+            window.innerWidth > 768 &&
             mobileNav
         ) {
 
@@ -104,13 +121,13 @@ window.addEventListener(
 
             if (menuBtn) {
 
-                menuBtn.classList.remove(
-                    "active"
+                menuBtn.textContent = "☰";
+
+                menuBtn.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
                 );
-
             }
-
         }
-
     }
 );

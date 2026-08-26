@@ -17,6 +17,10 @@ body {
 }
 
 
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 header {
     width: 94%;
     min-height: 82px;
@@ -39,12 +43,16 @@ header {
     border: 1.5px solid #e31b3b;
     border-radius: 45px;
 
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
 
     animation: navSlide 0.8s ease both;
 }
 
 
+/* =====================================================
+   LOGO
+===================================================== */
 
 .site-logo {
     width: 180px;
@@ -60,23 +68,18 @@ header {
     height: 65px;
 
     background-image: url("./chioma-removebg-preview.png");
+
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
     display: flex;
     align-items: flex-end;
-
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.logo:hover {
-    transform: scale(1.06) rotate(-2deg);
-    filter: drop-shadow(0 0 8px rgba(227, 27, 59, 0.35));
 }
 
 .site-name {
     color: #ffffff;
+
     font-size: 22px;
     font-weight: 700;
 
@@ -91,12 +94,6 @@ header {
         Calibri,
         "Trebuchet MS",
         sans-serif;
-
-    transition: color 0.3s ease;
-}
-
-.site-logo:hover .site-name {
-    color: #e31b3b;
 }
 
 
@@ -178,25 +175,90 @@ nav a:hover::after {
 
 
 /* =====================================================
+   ACTIVE PROJECT LINK
+===================================================== */
+
+nav a.active {
+    color: #ffffff;
+}
+
+nav a.active::after {
+    width: 100%;
+
+    box-shadow:
+        0 0 10px rgba(227, 27, 59, 0.5);
+}
+
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e31b3b;
+    border-radius: 50%;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
    PROJECT PAGE
 ===================================================== */
 
-.projects-section {
+.project-page {
     width: 100%;
     min-height: calc(100vh - 105px);
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 100px 5% 70px;
 }
 
-.coming-soon {
-    width: 100%;
-    max-width: 750px;
 
-    padding: 55px 45px;
+/* =====================================================
+   PROJECT SECTION
+===================================================== */
+
+.project-section {
+    width: 100%;
+
+    min-height: calc(100vh - 105px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        90px
+        5%
+        70px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 55px 50px;
 
     text-align: center;
 
@@ -208,30 +270,33 @@ nav a:hover::after {
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.45);
 
-    animation: fadeUp 0.9s ease forwards;
+    animation:
+        fadeUp 0.9s ease forwards;
 }
 
 
 /* =====================================================
-   ICON
+   PROJECT ICON
 ===================================================== */
 
-.icon {
-    width: 70px;
-    height: 70px;
+.project-icon {
+    width: 72px;
+    height: 72px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 32px;
-
     background: #1a1a1a;
 
     border: 1px solid #e31b3b;
+
     border-radius: 20px;
+
+    font-size: 32px;
 
     box-shadow:
         0 0 25px rgba(227, 27, 59, 0.12);
@@ -241,8 +306,10 @@ nav a:hover::after {
         box-shadow 0.4s ease;
 }
 
-.icon:hover {
-    transform: translateY(-6px) rotate(-4deg);
+.project-icon:hover {
+    transform:
+        translateY(-6px)
+        rotate(-4deg);
 
     box-shadow:
         0 0 35px rgba(227, 27, 59, 0.25);
@@ -250,7 +317,7 @@ nav a:hover::after {
 
 
 /* =====================================================
-   LABEL
+   SECTION LABEL
 ===================================================== */
 
 .section-label {
@@ -259,11 +326,13 @@ nav a:hover::after {
     padding: 8px 18px;
 
     border: 1px solid #e31b3b;
+
     border-radius: 30px;
 
     color: #e31b3b;
 
-    background: rgba(227, 27, 59, 0.04);
+    background:
+        rgba(227, 27, 59, 0.04);
 
     font-size: 12px;
     font-weight: 700;
@@ -278,10 +347,11 @@ nav a:hover::after {
    TITLE
 ===================================================== */
 
-.coming-soon h1 {
+.project-card h1 {
     color: #ffffff;
 
-    font-size: clamp(45px, 7vw, 72px);
+    font-size:
+        clamp(45px, 7vw, 72px);
 
     line-height: 1.05;
 
@@ -290,12 +360,12 @@ nav a:hover::after {
     margin-bottom: 25px;
 }
 
-.coming-soon h1 span {
+.project-card h1 span {
     display: block;
 
-    color: #e31b3b;
-
     margin-top: 8px;
+
+    color: #e31b3b;
 }
 
 
@@ -303,10 +373,11 @@ nav a:hover::after {
    DESCRIPTION
 ===================================================== */
 
-.coming-soon p {
-    max-width: 600px;
+.project-card p {
+    max-width: 610px;
 
-    margin: 0 auto 14px;
+    margin:
+        0 auto 15px;
 
     color: #a9a9a9;
 
@@ -317,11 +388,63 @@ nav a:hover::after {
 
 
 /* =====================================================
+   PROJECT STATUS
+===================================================== */
+
+.project-status {
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin:
+        25px auto 0;
+
+    padding:
+        11px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background: #181818;
+
+    border: 1px solid #303030;
+
+    border-radius: 30px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e31b3b;
+
+    box-shadow:
+        0 0 10px rgba(227, 27, 59, 0.7);
+}
+
+.project-status span {
+    color: #a9a9a9;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
    BUTTON
 ===================================================== */
 
 .btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -329,11 +452,13 @@ nav a:hover::after {
 
     margin-top: 25px;
 
-    padding: 14px 25px;
+    padding:
+        14px 25px;
 
     background: #e31b3b;
 
     border: 1px solid #e31b3b;
+
     border-radius: 30px;
 
     color: #ffffff;
@@ -346,6 +471,7 @@ nav a:hover::after {
     transition:
         transform 0.3s ease,
         background 0.3s ease,
+        color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
@@ -373,68 +499,40 @@ nav a:hover::after {
 
 
 /* =====================================================
-   MOBILE MENU BUTTON
-===================================================== */
-
-.menu-btn {
-    display: none;
-
-    width: 42px;
-    height: 42px;
-
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #e31b3b;
-    border-radius: 50%;
-
-    background: #111111;
-
-    color: #ffffff;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.menu-btn:hover {
-    background: #e31b3b;
-    color: #ffffff;
-
-    transform: scale(1.05);
-}
-
-
-/* =====================================================
    ANIMATIONS
 ===================================================== */
 
 @keyframes fadeUp {
+
     from {
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 @keyframes navSlide {
+
     from {
         opacity: 0;
-        transform: translateY(-25px);
+
+        transform:
+            translateY(-25px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -449,12 +547,15 @@ nav a:hover::after {
         min-height: 75px;
 
         top: 8px;
+
         margin-top: 8px;
 
-        padding: 6px 4%;
+        padding:
+            6px 4%;
 
         gap: 10px;
     }
+
 
     .site-logo {
         width: 140px;
@@ -469,40 +570,45 @@ nav a:hover::after {
     }
 
     .site-name {
-        font-size: 9px;
+        font-size: 15px;
+
         margin-left: 42px;
     }
 
 
-    /* SHOW MENU BUTTON */
-
     .menu-btn {
         display: flex;
-        flex-shrink: 0;
     }
 
 
-    /* MOBILE NAVIGATION */
-
-    nav {
+    header nav {
         position: absolute;
 
         top: calc(100% + 10px);
-        left: 0;
 
-        width: 100%;
+        right: 0;
 
-        padding: 20px;
+        width: 240px;
 
-        background: rgba(8, 8, 8, 0.98);
+        padding: 18px;
+
+        background: #0d0d0d;
 
         border: 1px solid #e31b3b;
-        border-radius: 25px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.5);
 
         opacity: 0;
+
         visibility: hidden;
 
-        transform: translateY(-12px);
+        pointer-events: none;
+
+        transform:
+            translateY(-10px);
 
         transition:
             opacity 0.3s ease,
@@ -510,12 +616,18 @@ nav a:hover::after {
             transform 0.3s ease;
     }
 
-    nav.a-res1 {
+
+    header nav.a-res1 {
         opacity: 1;
+
         visibility: visible;
 
-        transform: translateY(0);
+        pointer-events: auto;
+
+        transform:
+            translateY(0);
     }
+
 
     nav ul {
         width: 100%;
@@ -524,7 +636,9 @@ nav a:hover::after {
 
         flex-direction: column;
 
-        gap: 5px;
+        align-items: stretch;
+
+        gap: 4px;
     }
 
     nav li {
@@ -536,30 +650,36 @@ nav a:hover::after {
 
         display: block;
 
-        padding: 13px 15px;
+        padding:
+            12px 14px;
 
-        border-radius: 10px;
+        border-radius: 8px;
 
         font-size: 14px;
-
-        text-align: center;
     }
 
     nav a:hover {
-        background: rgba(227, 27, 59, 0.08);
+        background: #171717;
 
-        transform: none;
+        transform:
+            translateX(4px);
     }
 
     nav a::after {
         display: none;
     }
 
+    nav a.active {
+        background:
+            rgba(227, 27, 59, 0.12);
+    }
+
 
     /* PROJECT */
 
-    .projects-section {
-        min-height: calc(100vh - 90px);
+    .project-section {
+        min-height:
+            calc(100vh - 90px);
 
         padding:
             80px
@@ -567,11 +687,12 @@ nav a:hover::after {
             50px;
     }
 
-    .coming-soon {
-        padding: 45px 30px;
+    .project-card {
+        padding:
+            45px 30px;
     }
 
-    .coming-soon h1 {
+    .project-card h1 {
         font-size: 52px;
     }
 }
@@ -589,9 +710,11 @@ nav a:hover::after {
         min-height: 68px;
 
         top: 6px;
+
         margin-top: 6px;
 
-        padding: 5px 4%;
+        padding:
+            5px 4%;
 
         border-radius: 30px;
     }
@@ -609,10 +732,11 @@ nav a:hover::after {
     }
 
     .site-name {
-        font-size: 8px;
+        font-size: 15px;
 
         margin-left: 36px;
     }
+
 
     .menu-btn {
         width: 39px;
@@ -622,8 +746,11 @@ nav a:hover::after {
     }
 
 
-    nav {
-        top: calc(100% + 8px);
+    header nav {
+        top:
+            calc(100% + 8px);
+
+        width: 220px;
 
         padding: 15px;
 
@@ -631,38 +758,34 @@ nav a:hover::after {
     }
 
     nav a {
-        padding: 12px;
+        padding:
+            12px;
 
         font-size: 13px;
     }
 
 
-    .projects-section {
+    /* PROJECT */
+
+    .project-section {
+        min-height:
+            calc(100vh - 82px);
+
         padding:
             70px
             5%
             35px;
     }
 
-    .coming-soon {
-        padding: 35px 20px;
+    .project-card {
+        padding:
+            35px 20px;
 
         border-radius: 18px;
     }
 
-nav li:nth-child(4) a {
-    color: #ffffff;
-}
 
-
-nav li:nth-child(4) a::after {
-    width: 100%;
-
-    box-shadow:
-        0 0 10px rgba(227, 27, 59, 0.5);
-}
-
-    .icon {
+    .project-icon {
         width: 60px;
         height: 60px;
 
@@ -674,26 +797,17 @@ nav li:nth-child(4) a::after {
     }
 
 
-nav li:nth-child(4) a {
-    color: #ffffff;
-}
-
-nav li:nth-child(4) a::after {
-    width: 100%;
-
-    box-shadow:
-        0 0 10px rgba(227, 27, 59, 0.5);
-}
-
     .section-label {
-        padding: 7px 13px;
+        padding:
+            7px 13px;
 
         font-size: 9px;
 
         margin-bottom: 17px;
     }
 
-    .coming-soon h1 {
+
+    .project-card h1 {
         font-size: 38px;
 
         line-height: 1.08;
@@ -701,14 +815,27 @@ nav li:nth-child(4) a::after {
         margin-bottom: 20px;
     }
 
-    .coming-soon p {
+
+    .project-card p {
         font-size: 14px;
 
         line-height: 1.65;
     }
 
+
+    .project-status {
+        padding:
+            10px 13px;
+    }
+
+    .project-status span {
+        font-size: 10px;
+    }
+
+
     .btn {
-        padding: 13px 20px;
+        padding:
+            13px 20px;
 
         font-size: 13px;
     }
@@ -726,9 +853,12 @@ nav li:nth-child(4) a::after {
 
         min-height: 64px;
 
-        padding: 4px 3%;
+        padding:
+            4px 3%;
 
         border-radius: 28px;
+
+        gap: 5px;
     }
 
     .site-logo {
@@ -744,10 +874,11 @@ nav li:nth-child(4) a::after {
     }
 
     .site-name {
-        font-size: 7px;
+        font-size: 13px;
 
         margin-left: 31px;
     }
+
 
     .menu-btn {
         width: 37px;
@@ -756,57 +887,79 @@ nav li:nth-child(4) a::after {
         font-size: 17px;
     }
 
-    nav {
+
+    header nav {
         padding: 12px;
 
         border-radius: 20px;
     }
 
     nav a {
-        padding: 11px;
+        padding:
+            11px;
 
         font-size: 12px;
     }
 
 
-    .projects-section {
+    /* PROJECT */
+
+    .project-section {
         padding:
             60px
             4%
             30px;
     }
 
-    .coming-soon {
-        padding: 30px 16px;
+    .project-card {
+        padding:
+            30px 16px;
 
         border-radius: 16px;
     }
 
-    .icon {
+
+    .project-icon {
         width: 55px;
         height: 55px;
 
         font-size: 24px;
     }
 
+
     .section-label {
         font-size: 8px;
 
-        padding: 6px 11px;
+        padding:
+            6px 11px;
     }
 
-    .coming-soon h1 {
+
+    .project-card h1 {
         font-size: 32px;
     }
 
-    .coming-soon p {
+
+    .project-card p {
         font-size: 13px;
     }
+
+
+    .project-status {
+        width: 100%;
+    }
+
+
+    .project-status span {
+        font-size: 9px;
+    }
+
 
     .btn {
         width: 100%;
 
-        padding: 12px 16px;
+        padding:
+            12px 16px;
     }
 }
 
@@ -820,9 +973,17 @@ nav li:nth-child(4) a::after {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
     }
 }

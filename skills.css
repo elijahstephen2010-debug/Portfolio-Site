@@ -10,9 +10,13 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: #0a0a0a;
+
     color: #fff8f5;
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
@@ -23,17 +27,23 @@ body {
 
 header {
     width: 94%;
+
     min-height: 82px;
 
     position: sticky;
+
     top: 12px;
+
     z-index: 1000;
 
     margin: 12px auto 0;
+
     padding: 8px 4%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -41,22 +51,14 @@ header {
     background: rgba(5, 5, 5, 0.96);
 
     border: 1.5px solid #e31b3b;
+
     border-radius: 45px;
 
     box-shadow:
         0 8px 30px rgba(0, 0, 0, 0.35);
 
-    animation: navSlide 0.8s ease both;
-
-    transition:
-        box-shadow 0.4s ease,
-        border-color 0.4s ease,
-        background 0.4s ease;
-}
-
-header:hover {
-    box-shadow:
-        0 10px 35px rgba(227, 27, 59, 0.14);
+    animation:
+        navSlide 0.8s ease both;
 }
 
 
@@ -66,45 +68,47 @@ header:hover {
 
 .site-logo {
     width: 180px;
+
     min-width: 180px;
+
     height: 70px;
 
     display: flex;
+
     align-items: center;
 }
 
 .logo {
     width: 75px;
+
     height: 65px;
 
-    background-image: url("./chioma-removebg-preview.png");
+    background-image:
+        url("./chioma-removebg-preview.png");
 
     background-size: contain;
+
     background-repeat: no-repeat;
+
     background-position: center;
 
     display: flex;
+
     align-items: flex-end;
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
 }
 
-.logo:hover {
-    transform: scale(1.06) rotate(-2deg);
 
-    filter:
-        drop-shadow(0 0 8px rgba(227, 27, 59, 0.35));
-}
+/* NO HOVER EFFECT */
 
 .site-name {
     color: #ffffff;
 
     font-size: 22px;
+
     font-weight: 700;
 
     margin-left: 55px;
+
     margin-bottom: 3px;
 
     white-space: nowrap;
@@ -115,15 +119,6 @@ header:hover {
         Calibri,
         "Trebuchet MS",
         sans-serif;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.site-logo:hover .site-name {
-    color: #e31b3b;
-    transform: translateX(2px);
 }
 
 
@@ -133,17 +128,21 @@ header:hover {
 
 nav {
     display: flex;
+
     align-items: center;
 }
 
 nav ul {
     display: flex;
+
     align-items: center;
+
     justify-content: flex-end;
 
     gap: 28px;
 
     margin: 0;
+
     padding: 0;
 
     list-style: none;
@@ -163,6 +162,7 @@ nav a {
     color: #bdbdbd;
 
     font-size: 15px;
+
     font-weight: 500;
 
     text-decoration: none;
@@ -178,25 +178,29 @@ nav a::after {
     position: absolute;
 
     left: 50%;
+
     bottom: 2px;
 
     width: 0;
+
     height: 2px;
 
     background: #e31b3b;
 
     border-radius: 10px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     transition:
-        width 0.35s ease,
-        box-shadow 0.35s ease;
+        width 0.35s ease;
 }
 
 nav a:hover {
     color: #ffffff;
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 }
 
 nav a:hover::after {
@@ -205,94 +209,85 @@ nav a:hover::after {
 
 
 /* =====================================================
-   ACTIVE SKILL LINK
+   SKILL ACTIVE
 ===================================================== */
 
-nav li:nth-child(3) a,
-nav li:nth-child(3) a.active {
+nav a.active {
     color: #ffffff;
 }
 
-nav li:nth-child(3) a::after,
-nav li:nth-child(3) a.active::after {
+nav a.active::after {
     width: 100%;
 
     box-shadow:
-        0 0 10px rgba(227, 27, 59, 0.5);
+        0 0 10px
+        rgba(227, 27, 59, 0.5);
 }
 
 
 /* =====================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
 ===================================================== */
 
 .menu-btn {
     display: none;
 
-    width: 46px;
-    height: 46px;
+    width: 42px;
+
+    height: 42px;
+
+    align-items: center;
+
+    justify-content: center;
 
     border: 1px solid #e31b3b;
+
     border-radius: 50%;
 
     background: #111111;
+
     color: #ffffff;
 
-    font-size: 22px;
-    line-height: 1;
+    font-size: 20px;
 
     cursor: pointer;
 
-    align-items: center;
-    justify-content: center;
-
     transition:
         background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.3s ease;
 }
 
 .menu-btn:hover {
     background: #e31b3b;
-    color: #ffffff;
 
     transform: scale(1.05);
-
-    box-shadow:
-        0 0 18px rgba(227, 27, 59, 0.3);
-}
-
-.menu-btn.active {
-    background: #e31b3b;
-    color: #ffffff;
-
-    transform: rotate(90deg);
 }
 
 
 /* =====================================================
-   MAIN PAGE
+   SKILLS PAGE
 ===================================================== */
 
 .skills-page {
     width: 100%;
+
     max-width: 1250px;
 
     margin: 0 auto;
 
-    padding: 145px 35px 60px;
+    padding:
+        110px 35px 70px;
 }
 
 
 /* =====================================================
-   INTRO
+   HERO
 ===================================================== */
 
-.skills-intro {
-    max-width: 700px;
+.skills-hero {
+    max-width: 800px;
 
-    margin-bottom: 45px;
+    margin-bottom: 65px;
 
     animation:
         fadeUp 0.8s ease forwards;
@@ -301,9 +296,12 @@ nav li:nth-child(3) a.active::after {
 .section-label {
     display: inline-block;
 
-    padding: 8px 18px;
+    padding:
+        8px 18px;
 
-    border: 1px solid #e31b3b;
+    border:
+        1px solid #e31b3b;
+
     border-radius: 30px;
 
     color: #e31b3b;
@@ -312,136 +310,53 @@ nav li:nth-child(3) a.active::after {
         rgba(227, 27, 59, 0.04);
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 1px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
-.skills-intro h1 {
-    font-size: clamp(42px, 5vw, 68px);
+.skills-hero h1 {
+    color: #ffffff;
 
-    line-height: 1.05;
+    font-size:
+        clamp(50px, 6vw, 76px);
+
+    line-height: 1.02;
 
     font-weight: 800;
 
-    color: #fff8f5;
-
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
-.skills-intro h1 span {
+.skills-hero h1 span {
     color: #e31b3b;
 }
 
-.skills-intro p {
-    max-width: 600px;
+.skills-hero p {
+    max-width: 650px;
+
+    color: #a9a9a9;
 
     font-size: 17px;
 
     line-height: 1.7;
-
-    color: #bdbdbd;
 }
 
 
 /* =====================================================
-   IMAGE + SKILLS
+   SKILLS GRID
 ===================================================== */
 
-.skills-content {
+.skills-grid {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.5fr);
+        repeat(3, 1fr);
 
-    gap: 35px;
-
-    align-items: stretch;
-}
-
-
-/* =====================================================
-   IMAGE
-===================================================== */
-
-.skills-image {
-    width: 100%;
-
-    min-height: 500px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    border: 1px solid #303030;
-
-    background: #111111;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.4);
-
-    animation:
-        fadeLeft 0.9s ease forwards;
-}
-
-.skills-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    transition:
-        transform 0.7s ease,
-        filter 0.7s ease;
-}
-
-.skills-image:hover img {
-    transform: scale(1.05);
-
-    filter:
-        brightness(0.85)
-        saturate(1.15);
-}
-
-.skills-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 50%,
-            rgba(227, 27, 59, 0.12)
-        );
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   SKILL CATEGORIES
-===================================================== */
-
-.skill-categories {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-
-    min-width: 0;
+    gap: 22px;
 }
 
 
@@ -450,18 +365,20 @@ nav li:nth-child(3) a.active::after {
 ===================================================== */
 
 .skill-card {
-    min-width: 0;
+    padding: 30px;
 
-    padding: 22px;
+    background: #111111;
 
-    background: #171717;
+    border:
+        1px solid #292929;
 
-    border: 1px solid #2b2b2b;
+    border-radius: 20px;
 
-    border-radius: 16px;
+    min-height: 280px;
 
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+
+    flex-direction: column;
 
     transition:
         transform 0.35s ease,
@@ -472,271 +389,209 @@ nav li:nth-child(3) a.active::after {
         fadeUp 0.8s ease forwards;
 }
 
-.skill-card:nth-child(1) {
-    animation-delay: 0.15s;
-}
-
-.skill-card:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
 .skill-card:hover {
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
-    border-color: #e31b3b;
+    border-color:
+        rgba(227, 27, 59, 0.65);
 
     box-shadow:
-        0 15px 40px rgba(227, 27, 59, 0.12);
+        0 15px 35px
+        rgba(0, 0, 0, 0.35);
 }
 
 
 /* =====================================================
-   CARD HEADER
+   SKILL ICON
 ===================================================== */
 
-.skill-card-header {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 20px;
-
-    min-width: 0;
-}
-
 .skill-icon {
-    width: 46px;
-    height: 46px;
+    width: 55px;
 
-    flex-shrink: 0;
-
-    border-radius: 13px;
+    height: 55px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: #e31b3b;
+    margin-bottom: 25px;
 
-    color: #ffffff;
+    border:
+        1px solid #e31b3b;
 
-    font-size: 19px;
+    border-radius: 15px;
 
-    box-shadow:
-        0 0 18px rgba(227, 27, 59, 0.2);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.skill-card:hover .skill-icon {
-    transform:
-        rotate(-5deg)
-        scale(1.05);
-
-    box-shadow:
-        0 0 25px rgba(227, 27, 59, 0.35);
-}
-
-.frontend .skill-icon {
-    background: #232323;
-
-    border: 1px solid #e31b3b;
+    background: #181818;
 
     color: #e31b3b;
 
-    box-shadow: none;
-}
+    font-size: 22px;
 
-.category-label {
-    display: block;
-
-    font-size: 9px;
-
-    color: #777777;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 4px;
-}
-
-.skill-card h2 {
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 1.2;
-
-    overflow-wrap: break-word;
+    font-weight: 700;
 }
 
 
 /* =====================================================
-   SKILL ITEMS
+   CARD TEXT
 ===================================================== */
 
-.skill-item {
-    margin-bottom: 17px;
+.skill-card h2 {
+    color: #ffffff;
 
-    min-width: 0;
+    font-size: 21px;
+
+    line-height: 1.2;
+
+    margin-bottom: 13px;
 }
 
-.skill-item:last-child {
-    margin-bottom: 0;
+.skill-card p {
+    color: #999999;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
 }
 
-.skill-info {
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: auto;
+}
+
+.skill-tags span {
+    padding:
+        6px 10px;
+
+    background: #181818;
+
+    border:
+        1px solid #303030;
+
+    border-radius: 20px;
+
+    color: #bdbdbd;
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.skill-card:hover .skill-tags span {
+    border-color:
+        rgba(227, 27, 59, 0.4);
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.skills-cta {
+    margin-top: 70px;
+
+    padding: 40px 45px;
+
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
 
-    gap: 10px;
+    gap: 30px;
 
-    margin-bottom: 7px;
+    background: #151515;
 
-    min-width: 0;
+    border:
+        1px solid #292929;
+
+    border-radius: 20px;
+
+    animation:
+        fadeUp 1s ease forwards;
 }
 
-.skill-info span:first-child {
-    font-size: 13px;
-
-    color: #d4d4d4;
-
-    overflow-wrap: break-word;
-}
-
-.skill-info span:last-child {
-    font-size: 12px;
+.skills-cta > div span {
+    display: block;
 
     color: #e31b3b;
+
+    font-size: 11px;
 
     font-weight: 700;
 
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.skills-cta h2 {
+    color: #ffffff;
+
+    font-size:
+        clamp(25px, 3vw, 38px);
+
+    line-height: 1.15;
+}
+
+.cta-button {
     flex-shrink: 0;
-}
 
+    padding:
+        14px 20px;
 
-/* =====================================================
-   SKILL BAR
-===================================================== */
+    border:
+        1px solid #e31b3b;
 
-.skill-bar {
-    width: 100%;
+    border-radius: 10px;
 
-    height: 5px;
+    color: #ffffff;
 
-    background: #303030;
+    background: transparent;
 
-    border-radius: 20px;
+    text-decoration: none;
 
-    overflow: hidden;
-}
+    font-size: 13px;
 
-.skill-progress {
-    width: var(--skill-level);
-
-    height: 100%;
-
-    border-radius: 20px;
-
-    background: #e31b3b;
-
-    box-shadow:
-        0 0 8px rgba(227, 27, 59, 0.35);
-
-    transform-origin: left;
-
-    animation:
-        progressAnimation 1.3s
-        cubic-bezier(0.25, 1, 0.5, 1)
-        forwards;
-}
-
-@keyframes progressAnimation {
-
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-
-/* =====================================================
-   STATS
-===================================================== */
-
-.skills-stats {
-    margin-top: 35px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    background: #111111;
-
-    border: 1px solid #303030;
-
-    border-radius: 16px;
-
-    padding: 20px;
-
-    min-width: 0;
-
-    animation:
-        fadeUp 0.9s ease forwards;
-}
-
-.stat {
-    text-align: center;
-
-    padding: 8px;
-
-    border-right: 1px solid #303030;
-
-    min-width: 0;
-}
-
-.stat:last-child {
-    border-right: none;
-}
-
-.stat strong {
-    display: block;
-
-    font-size: 28px;
-
-    font-weight: 800;
-
-    color: #e31b3b;
-
-    margin-bottom: 5px;
+    font-weight: 700;
 
     transition:
-        transform 0.3s ease;
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.stat:hover strong {
-    transform: scale(1.08);
+.cta-button span {
+    margin-left: 8px;
 }
 
-.stat span {
-    display: block;
+.cta-button:hover {
+    background: #e31b3b;
 
-    color: #888888;
+    transform:
+        translateY(-3px);
 
-    font-size: 12px;
-
-    overflow-wrap: break-word;
+    box-shadow:
+        0 10px 25px
+        rgba(227, 27, 59, 0.2);
 }
 
 
@@ -761,23 +616,6 @@ nav li:nth-child(3) a.active::after {
     }
 }
 
-@keyframes fadeLeft {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateX(-30px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateX(0);
-    }
-}
-
 @keyframes navSlide {
 
     from {
@@ -797,8 +635,7 @@ nav li:nth-child(3) a.active::after {
 
 
 /* =====================================================
-   TABLET + MOBILE NAV
-   768px AND BELOW
+   TABLET — 768px
 ===================================================== */
 
 @media (max-width: 768px) {
@@ -810,16 +647,16 @@ nav li:nth-child(3) a.active::after {
 
         margin-top: 8px;
 
-        padding: 6px 4%;
+        padding:
+            6px 4%;
 
         gap: 10px;
     }
 
 
-    /* LOGO */
-
     .site-logo {
         width: 140px;
+
         min-width: 140px;
 
         height: 62px;
@@ -827,108 +664,121 @@ nav li:nth-child(3) a.active::after {
 
     .logo {
         width: 60px;
+
         height: 57px;
     }
 
     .site-name {
-        font-size: 9px;
+        font-size: 15px;
 
         margin-left: 42px;
     }
 
 
-    /* HIDE NORMAL NAV */
-
-    nav {
-        display: none;
-    }
-
-
-    /* SHOW MENU BUTTON */
-
     .menu-btn {
         display: flex;
 
-        margin-left: auto;
+        flex-shrink: 0;
     }
 
 
-    /* SHOW NAV WHEN JS ADDS a-res1 */
-
-    nav.a-res1 {
-        display: block;
-
+    header nav {
         position: absolute;
 
-        top: calc(100% + 12px);
+        top:
+            calc(100% + 10px);
+
         right: 0;
 
-        width: 230px;
+        width: 240px;
 
-        padding: 15px;
+        padding: 18px;
 
-        background: rgba(5, 5, 5, 0.98);
+        display: block;
 
-        border: 1px solid #e31b3b;
+        background: #0d0d0d;
 
-        border-radius: 20px;
+        border:
+            1px solid #e31b3b;
+
+        border-radius: 18px;
 
         box-shadow:
-            0 15px 40px rgba(0, 0, 0, 0.5);
+            0 15px 40px
+            rgba(0, 0, 0, 0.5);
 
-        animation:
-            mobileNavShow 0.3s ease forwards;
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform:
+            translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
     }
 
-    nav.a-res1 ul {
+    header nav.a-res1 {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform:
+            translateY(0);
+    }
+
+
+    nav ul {
+        width: 100%;
+
         display: flex;
 
         flex-direction: column;
 
         align-items: stretch;
 
-        justify-content: flex-start;
-
         gap: 4px;
     }
 
-    nav.a-res1 li {
+    nav li {
         width: 100%;
     }
 
-    nav.a-res1 a {
+    nav a {
+        width: 100%;
+
         display: block;
 
-        width: 100%;
+        padding:
+            12px 14px;
 
-        padding: 12px 14px;
-
-        border-radius: 10px;
+        border-radius: 8px;
 
         font-size: 14px;
-
-        color: #bdbdbd;
     }
 
-    nav.a-res1 a:hover {
-        background: rgba(227, 27, 59, 0.08);
+    nav a:hover {
+        background: #171717;
 
-        color: #ffffff;
-
-        transform: translateX(4px);
+        transform:
+            translateX(4px);
     }
 
-    nav.a-res1 a::after {
+    nav a::after {
         display: none;
     }
 
-    nav.a-res1 li:nth-child(3) a {
-        color: #ffffff;
-
+    nav a.active {
         background:
             rgba(227, 27, 59, 0.12);
 
-        border-left: 2px solid #e31b3b;
+        color: #ffffff;
     }
 
 
@@ -936,61 +786,48 @@ nav li:nth-child(3) a.active::after {
 
     .skills-page {
         padding:
-            115px
-            5%
-            45px;
+            95px 5% 50px;
     }
 
-    .skills-intro {
-        margin-bottom: 35px;
+    .skills-hero {
+        margin-bottom: 50px;
     }
 
-    .skills-intro h1 {
-        font-size: 48px;
+    .skills-hero h1 {
+        font-size: 55px;
     }
 
-    .skills-intro p {
+    .skills-hero p {
         font-size: 15px;
     }
 
 
-    /* CONTENT */
+    /* GRID */
 
-    .skills-content {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-
-    /* IMAGE */
-
-    .skills-image {
-        height: 340px;
-
-        min-height: 0;
-    }
-
-
-    /* CARDS */
-
-    .skill-categories {
+    .skills-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2, 1fr);
 
-        gap: 16px;
+        gap: 18px;
     }
 
     .skill-card {
-        padding: 20px;
+        padding: 25px;
+
+        min-height: 270px;
     }
 
-    .skill-card h2 {
-        font-size: 17px;
-    }
 
-    .skills-stats {
-        margin-top: 28px;
+    /* CTA */
+
+    .skills-cta {
+        margin-top: 50px;
+
+        padding: 35px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 }
 
@@ -1010,16 +847,15 @@ nav li:nth-child(3) a.active::after {
 
         margin-top: 6px;
 
-        padding: 5px 4%;
+        padding:
+            5px 4%;
 
         border-radius: 30px;
     }
 
-
-    /* LOGO */
-
     .site-logo {
         width: 115px;
+
         min-width: 115px;
 
         height: 55px;
@@ -1027,42 +863,36 @@ nav li:nth-child(3) a.active::after {
 
     .logo {
         width: 50px;
+
         height: 50px;
     }
 
     .site-name {
-        font-size: 8px;
+        font-size: 15px;
 
         margin-left: 36px;
     }
 
-
-    /* MENU */
-
     .menu-btn {
-        width: 42px;
-        height: 42px;
+        width: 39px;
 
-        font-size: 20px;
+        height: 39px;
+
+        font-size: 18px;
     }
 
 
-    /* MOBILE NAV */
+    header nav {
+        width: 220px;
 
-    nav.a-res1 {
-        top: calc(100% + 10px);
-
-        width: 210px;
-
-        padding: 12px;
-
-        border-radius: 18px;
+        padding: 15px;
     }
 
-    nav.a-res1 a {
+    nav a {
+        padding:
+            11px 13px;
+
         font-size: 13px;
-
-        padding: 11px 12px;
     }
 
 
@@ -1070,127 +900,97 @@ nav li:nth-child(3) a.active::after {
 
     .skills-page {
         padding:
-            105px
-            5%
-            35px;
-    }
-
-    .skills-intro {
-        margin-bottom: 30px;
+            80px 5% 35px;
     }
 
     .section-label {
-        padding: 7px 13px;
+        padding:
+            7px 13px;
 
         font-size: 9px;
 
-        margin-bottom: 15px;
+        margin-bottom: 17px;
     }
 
-    .skills-intro h1 {
-        font-size: 37px;
+    .skills-hero {
+        margin-bottom: 40px;
+    }
+
+    .skills-hero h1 {
+        font-size: 38px;
 
         line-height: 1.08;
 
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
 
-    .skills-intro p {
+    .skills-hero p {
         font-size: 14px;
 
         line-height: 1.65;
     }
 
 
-    /* CONTENT */
+    /* GRID */
 
-    .skills-content {
-        gap: 18px;
-    }
-
-
-    /* IMAGE */
-
-    .skills-image {
-        height: 230px;
-
-        border-radius: 15px;
-    }
-
-
-    /* CARDS */
-
-    .skill-categories {
+    .skills-grid {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 15px;
     }
 
     .skill-card {
-        padding: 18px;
+        padding: 22px;
 
-        border-radius: 14px;
-    }
+        min-height: 0;
 
-    .skill-card-header {
-        margin-bottom: 18px;
+        border-radius: 17px;
     }
 
     .skill-icon {
-        width: 43px;
-        height: 43px;
+        width: 50px;
 
-        min-width: 43px;
+        height: 50px;
 
-        font-size: 17px;
-    }
-
-    .category-label {
-        font-size: 8px;
-    }
-
-    .skill-card h2 {
-        font-size: 17px;
-    }
-
-
-    /* SKILL ITEMS */
-
-    .skill-item {
-        margin-bottom: 16px;
-    }
-
-    .skill-info span:first-child {
-        font-size: 12px;
-    }
-
-    .skill-info span:last-child {
-        font-size: 11px;
-    }
-
-
-    /* STATS */
-
-    .skills-stats {
-        margin-top: 22px;
-
-        padding: 13px 5px;
+        margin-bottom: 20px;
 
         border-radius: 13px;
-    }
 
-    .stat {
-        padding: 7px 3px;
-    }
-
-    .stat strong {
         font-size: 20px;
     }
 
-    .stat span {
-        font-size: 9px;
+    .skill-card h2 {
+        font-size: 19px;
+    }
 
-        line-height: 1.3;
+    .skill-card p {
+        font-size: 13px;
+    }
+
+
+    /* CTA */
+
+    .skills-cta {
+        margin-top: 40px;
+
+        padding:
+            25px 20px;
+
+        border-radius: 15px;
+
+        gap: 22px;
+    }
+
+    .skills-cta h2 {
+        font-size: 25px;
+    }
+
+    .cta-button {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 13px;
     }
 }
 
@@ -1206,18 +1006,17 @@ nav li:nth-child(3) a.active::after {
 
         min-height: 64px;
 
-        padding: 4px 3%;
+        padding:
+            4px 3%;
 
         border-radius: 28px;
 
         gap: 5px;
     }
 
-
-    /* LOGO */
-
     .site-logo {
         width: 100px;
+
         min-width: 100px;
 
         height: 50px;
@@ -1225,136 +1024,70 @@ nav li:nth-child(3) a.active::after {
 
     .logo {
         width: 45px;
+
         height: 47px;
     }
 
     .site-name {
-        font-size: 7px;
+        font-size: 13px;
 
         margin-left: 31px;
     }
 
-
-    /* MENU */
-
     .menu-btn {
-        width: 40px;
-        height: 40px;
+        width: 37px;
 
-        font-size: 19px;
+        height: 37px;
+
+        font-size: 17px;
     }
 
+    header nav {
+        width: 205px;
 
-    /* MOBILE NAV */
-
-    nav.a-res1 {
-        width: 195px;
-
-        top: calc(100% + 8px);
-
-        padding: 10px;
-
-        border-radius: 16px;
+        padding: 13px;
     }
 
-    nav.a-res1 a {
+    nav a {
+        padding:
+            10px 12px;
+
         font-size: 12px;
-
-        padding: 10px;
     }
 
-
-    /* PAGE */
 
     .skills-page {
         padding:
-            95px
-            4%
-            30px;
+            65px 4% 30px;
     }
 
-    .section-label {
-        font-size: 8px;
-
-        padding: 6px 11px;
-    }
-
-    .skills-intro h1 {
+    .skills-hero h1 {
         font-size: 32px;
     }
 
-    .skills-intro p {
+    .skills-hero p {
         font-size: 13px;
     }
 
-
-    /* IMAGE */
-
-    .skills-image {
-        height: 205px;
-    }
-
-
-    /* CARDS */
-
     .skill-card {
-        padding: 16px;
-    }
-
-    .skill-icon {
-        width: 40px;
-        height: 40px;
-
-        min-width: 40px;
+        padding: 20px;
     }
 
     .skill-card h2 {
-        font-size: 16px;
-    }
-
-    .skill-item {
-        margin-bottom: 14px;
-    }
-
-    .skill-info span:first-child {
-        font-size: 11px;
-    }
-
-    .skill-info span:last-child {
-        font-size: 10px;
-    }
-
-
-    /* STATS */
-
-    .skills-stats {
-        padding: 11px 3px;
-    }
-
-    .stat strong {
         font-size: 18px;
     }
 
-    .stat span {
-        font-size: 8px;
-    }
-}
-
-
-/* =====================================================
-   MOBILE NAV ANIMATION
-===================================================== */
-
-@keyframes mobileNavShow {
-
-    from {
-        opacity: 0;
-        transform: translateY(-10px) scale(0.97);
+    .skill-card p {
+        font-size: 12px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    .skills-cta {
+        padding:
+            22px 16px;
+    }
+
+    .skills-cta h2 {
+        font-size: 23px;
     }
 }
 
@@ -1369,12 +1102,16 @@ nav li:nth-child(3) a.active::after {
     *::before,
     *::after {
 
-        animation-duration: 0.01ms !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
 
-        scroll-behavior: auto !important;
+        scroll-behavior:
+            auto !important;
     }
 }

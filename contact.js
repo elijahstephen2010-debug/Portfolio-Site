@@ -1,6 +1,10 @@
 const menuBtn = document.querySelector(".menu-btn");
-const mobileNav = document.querySelector("nav");
+const mobileNav = document.querySelector(".a-res");
 
+
+/* =====================================================
+   OPEN / CLOSE MENU
+===================================================== */
 
 function nav() {
 
@@ -8,13 +12,7 @@ function nav() {
         return;
     }
 
-
-    /* Toggle menu */
-
     mobileNav.classList.toggle("a-res1");
-
-
-    /* Change button */
 
     if (mobileNav.classList.contains("a-res1")) {
 
@@ -41,63 +39,106 @@ function nav() {
    CLOSE MENU WHEN LINK IS CLICKED
 ===================================================== */
 
-const navLinks = document.querySelectorAll("nav a");
+if (mobileNav) {
 
-navLinks.forEach(function (link) {
+    const navLinks =
+        mobileNav.querySelectorAll("a");
 
-    link.addEventListener("click", function () {
+    navLinks.forEach(function (link) {
 
-        if (!mobileNav || !menuBtn) {
-            return;
-        }
+        link.addEventListener(
+            "click",
+            function () {
 
-        mobileNav.classList.remove("a-res1");
+                mobileNav.classList.remove("a-res1");
 
-        menuBtn.textContent = "☰";
+                if (menuBtn) {
 
-        menuBtn.setAttribute(
-            "aria-label",
-            "Open menu"
+                    menuBtn.textContent = "☰";
+
+                    menuBtn.setAttribute(
+                        "aria-label",
+                        "Open menu"
+                    );
+                }
+
+            }
         );
+
     });
 
-});
+}
 
 
 /* =====================================================
    CLOSE MENU WHEN CLICKING OUTSIDE
 ===================================================== */
 
-document.addEventListener("click", function (event) {
+document.addEventListener(
+    "click",
+    function (event) {
 
-    if (!mobileNav || !menuBtn) {
-        return;
+        if (!mobileNav || !menuBtn) {
+            return;
+        }
+
+        if (
+            mobileNav.classList.contains("a-res1") &&
+            !mobileNav.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ) {
+
+            mobileNav.classList.remove("a-res1");
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+        }
+
     }
+);
 
-    if (
-        mobileNav.classList.contains("a-res1") &&
-        !mobileNav.contains(event.target) &&
-        !menuBtn.contains(event.target)
-    ) {
 
-        mobileNav.classList.remove("a-res1");
+/* =====================================================
+   CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+===================================================== */
 
-        menuBtn.textContent = "☰";
+window.addEventListener(
+    "resize",
+    function () {
 
-        menuBtn.setAttribute(
-            "aria-label",
-            "Open menu"
-        );
+        if (
+            window.innerWidth > 768 &&
+            mobileNav
+        ) {
+
+            mobileNav.classList.remove("a-res1");
+
+            if (menuBtn) {
+
+                menuBtn.textContent = "☰";
+
+                menuBtn.setAttribute(
+                    "aria-label",
+                    "Open menu"
+                );
+            }
+
+        }
+
     }
-
-});
+);
 
 
 /* =====================================================
    CONTACT FORM
 ===================================================== */
 
-const contactForm = document.querySelector("#contact-form");
+const contactForm =
+    document.querySelector("#contact-form");
 
 
 if (contactForm) {
@@ -106,23 +147,17 @@ if (contactForm) {
         "submit",
         async function (event) {
 
-            /* Stop Formspree redirect */
-
             event.preventDefault();
-
 
             const submitBtn =
                 contactForm.querySelector(".submit-btn");
-
 
             if (!submitBtn) {
                 return;
             }
 
 
-            /* =================================================
-               SENDING
-            ================================================= */
+            /* SENDING */
 
             submitBtn.innerHTML = `
                 Sending...
@@ -148,9 +183,7 @@ if (contactForm) {
                 );
 
 
-                /* =================================================
-                   SUCCESS
-                ================================================= */
+                /* SUCCESS */
 
                 if (response.ok) {
 
@@ -158,27 +191,29 @@ if (contactForm) {
                         Message Sent Successfully ✓
                     `;
 
-
                     contactForm.reset();
 
 
-                    setTimeout(function () {
+                    setTimeout(
+                        function () {
 
-                        submitBtn.innerHTML = `
-                            Send Message
-                            <span>→</span>
-                        `;
+                            submitBtn.innerHTML = `
+                                Send Message
+                                <span>→</span>
+                            `;
 
-                        submitBtn.disabled = false;
+                            submitBtn.disabled = false;
 
-                    }, 2000);
+                        },
+                        2000
+                    );
+
+                }
 
 
-                } else {
+                /* ERROR */
 
-                    /* =================================================
-                       ERROR
-                    ================================================= */
+                else {
 
                     submitBtn.innerHTML = `
                         Failed to Send
@@ -186,16 +221,19 @@ if (contactForm) {
                     `;
 
 
-                    setTimeout(function () {
+                    setTimeout(
+                        function () {
 
-                        submitBtn.innerHTML = `
-                            Send Message
-                            <span>→</span>
-                        `;
+                            submitBtn.innerHTML = `
+                                Send Message
+                                <span>→</span>
+                            `;
 
-                        submitBtn.disabled = false;
+                            submitBtn.disabled = false;
 
-                    }, 2000);
+                        },
+                        2000
+                    );
 
                 }
 
@@ -208,16 +246,19 @@ if (contactForm) {
                 `;
 
 
-                setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                    submitBtn.innerHTML = `
-                        Send Message
-                        <span>→</span>
-                    `;
+                        submitBtn.innerHTML = `
+                            Send Message
+                            <span>→</span>
+                        `;
 
-                    submitBtn.disabled = false;
+                        submitBtn.disabled = false;
 
-                }, 2000);
+                    },
+                    2000
+                );
 
             }
 

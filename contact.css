@@ -75,18 +75,6 @@ header {
 
     display: flex;
     align-items: flex-end;
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
-}
-
-.logo:hover {
-    transform: scale(1.06) rotate(-2deg);
-
-    filter: drop-shadow(
-        0 0 8px rgba(227, 27, 59, 0.35)
-    );
 }
 
 .site-name {
@@ -106,21 +94,11 @@ header {
         Calibri,
         "Trebuchet MS",
         sans-serif;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.site-logo:hover .site-name {
-    color: #e31b3b;
-
-    transform: translateX(2px);
 }
 
 
 /* =====================================================
-   DESKTOP NAVIGATION
+   NAVIGATION
 ===================================================== */
 
 nav {
@@ -188,7 +166,6 @@ nav a::after {
 
 nav a:hover {
     color: #ffffff;
-
     transform: translateY(-2px);
 }
 
@@ -198,14 +175,14 @@ nav a:hover::after {
 
 
 /* =====================================================
-   CONTACT ACTIVE LINK
+   ACTIVE CONTACT
 ===================================================== */
 
-nav li:nth-child(6) a {
+nav a.active {
     color: #ffffff;
 }
 
-nav li:nth-child(6) a::after {
+nav a.active::after {
     width: 100%;
 
     box-shadow:
@@ -214,38 +191,37 @@ nav li:nth-child(6) a::after {
 
 
 /* =====================================================
-   MOBILE MENU BUTTON
+   MENU BUTTON
 ===================================================== */
 
 .menu-btn {
     display: none;
 
-    border: none;
-    outline: none;
+    width: 42px;
+    height: 42px;
 
-    background: transparent;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e31b3b;
+    border-radius: 50%;
+
+    background: #111111;
 
     color: #ffffff;
 
-    font-size: 28px;
-
-    line-height: 1;
+    font-size: 20px;
 
     cursor: pointer;
 
-    padding: 5px;
-
-    z-index: 1100;
-
     transition:
-        color 0.3s ease,
+        background 0.3s ease,
         transform 0.3s ease;
 }
 
 .menu-btn:hover {
-    color: #e31b3b;
-
-    transform: scale(1.08);
+    background: #e31b3b;
+    transform: scale(1.05);
 }
 
 
@@ -264,7 +240,7 @@ nav li:nth-child(6) a::after {
 
 
 /* =====================================================
-   CONTACT HERO
+   HERO
 ===================================================== */
 
 .contact-hero {
@@ -325,7 +301,7 @@ nav li:nth-child(6) a::after {
 
 
 /* =====================================================
-   CONTACT CONTENT
+   CONTENT
 ===================================================== */
 
 .contact-content {
@@ -342,7 +318,7 @@ nav li:nth-child(6) a::after {
 
 
 /* =====================================================
-   CONTACT INFORMATION
+   CONTACT INFO
 ===================================================== */
 
 .contact-info {
@@ -523,7 +499,7 @@ nav li:nth-child(6) a::after {
 
 
 /* =====================================================
-   CONTACT FORM
+   FORM
 ===================================================== */
 
 .contact-form-wrapper {
@@ -566,11 +542,6 @@ nav li:nth-child(6) a::after {
 
     line-height: 1.15;
 }
-
-
-/* =====================================================
-   FORM
-===================================================== */
 
 .contact-form {
     display: flex;
@@ -951,9 +922,6 @@ nav li:nth-child(6) a::after {
         gap: 10px;
     }
 
-
-    /* LOGO */
-
     .site-logo {
         width: 140px;
         min-width: 140px;
@@ -967,20 +935,14 @@ nav li:nth-child(6) a::after {
     }
 
     .site-name {
-        font-size: 9px;
+        font-size: 15px;
 
         margin-left: 42px;
     }
 
-
-    /* SHOW MENU BUTTON */
-
     .menu-btn {
-        display: block;
+        display: flex;
     }
-
-
-    /* HIDE NAV */
 
     header nav {
         position: absolute;
@@ -1018,9 +980,6 @@ nav li:nth-child(6) a::after {
             transform 0.3s ease;
     }
 
-
-    /* SHOW NAV WHEN JS ADDS a-res1 */
-
     header nav.a-res1 {
         opacity: 1;
 
@@ -1030,9 +989,6 @@ nav li:nth-child(6) a::after {
 
         transform: translateY(0);
     }
-
-
-    /* MOBILE LINKS */
 
     nav ul {
         width: 100%;
@@ -1068,24 +1024,15 @@ nav li:nth-child(6) a::after {
         transform: translateX(4px);
     }
 
-
-    /* REMOVE DESKTOP UNDERLINE */
-
     nav a::after {
         display: none;
     }
 
-
-    /* CONTACT ACTIVE */
-
-    nav li:nth-child(6) a {
+    nav a.active {
         color: #ffffff;
 
         background: rgba(227, 27, 59, 0.12);
     }
-
-
-    /* PAGE */
 
     .contact-page {
         padding:
@@ -1161,20 +1108,17 @@ nav li:nth-child(6) a::after {
     }
 
     .site-name {
-        font-size: 8px;
+        font-size: 15px;
 
         margin-left: 36px;
     }
 
-
-    /* MENU BUTTON */
-
     .menu-btn {
-        font-size: 25px;
+        width: 39px;
+        height: 39px;
+
+        font-size: 18px;
     }
-
-
-    /* MOBILE NAV */
 
     header nav {
         width: 220px;
@@ -1189,9 +1133,6 @@ nav li:nth-child(6) a::after {
 
         padding: 11px 13px;
     }
-
-
-    /* PAGE */
 
     .contact-page {
         padding:
@@ -1261,9 +1202,6 @@ nav li:nth-child(6) a::after {
         font-size: 12px;
     }
 
-
-    /* FORM */
-
     .contact-form-wrapper {
         padding: 20px;
 
@@ -1298,9 +1236,6 @@ nav li:nth-child(6) a::after {
         padding: 14px;
     }
 
-
-    /* SOCIAL */
-
     .social-links {
         gap: 8px;
 
@@ -1312,9 +1247,6 @@ nav li:nth-child(6) a::after {
 
         font-size: 10px;
     }
-
-
-    /* CTA */
 
     .contact-cta {
         margin-top: 40px;
@@ -1337,9 +1269,6 @@ nav li:nth-child(6) a::after {
 
         padding: 13px;
     }
-
-
-    /* WHATSAPP */
 
     .whatsapp-float {
         width: 50px;
@@ -1390,13 +1319,16 @@ nav li:nth-child(6) a::after {
     }
 
     .site-name {
-        font-size: 7px;
+        font-size: 13px;
 
         margin-left: 31px;
     }
 
     .menu-btn {
-        font-size: 23px;
+        width: 37px;
+        height: 37px;
+
+        font-size: 17px;
     }
 
     header nav {
@@ -1410,9 +1342,6 @@ nav li:nth-child(6) a::after {
 
         padding: 10px 12px;
     }
-
-
-    /* PAGE */
 
     .contact-page {
         padding:

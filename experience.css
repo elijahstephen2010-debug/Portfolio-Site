@@ -47,15 +47,6 @@ header {
         0 8px 30px rgba(0, 0, 0, 0.35);
 
     animation: navSlide 0.8s ease both;
-
-    transition:
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-}
-
-header:hover {
-    box-shadow:
-        0 10px 35px rgba(227, 27, 59, 0.14);
 }
 
 
@@ -84,17 +75,6 @@ header:hover {
 
     display: flex;
     align-items: flex-end;
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
-}
-
-.logo:hover {
-    transform: scale(1.06) rotate(-2deg);
-
-    filter:
-        drop-shadow(0 0 8px rgba(227, 27, 59, 0.35));
 }
 
 .site-name {
@@ -114,15 +94,6 @@ header:hover {
         Calibri,
         "Trebuchet MS",
         sans-serif;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.site-logo:hover .site-name {
-    color: #e31b3b;
-    transform: translateX(2px);
 }
 
 
@@ -207,12 +178,10 @@ nav a:hover::after {
    ACTIVE EXPERIENCE LINK
 ===================================================== */
 
-nav li:nth-child(5) a,
 nav a.active {
     color: #ffffff;
 }
 
-nav li:nth-child(5) a::after,
 nav a.active::after {
     width: 100%;
 
@@ -253,9 +222,7 @@ nav a.active::after {
 
 .menu-btn:hover {
     background: #e31b3b;
-
     color: #ffffff;
-
     transform: scale(1.05);
 }
 
@@ -563,7 +530,7 @@ nav a.active::after {
     }
 
     .site-name {
-        font-size: 9px;
+        font-size: 15px;
 
         margin-left: 42px;
     }
@@ -584,26 +551,30 @@ nav a.active::after {
         position: absolute;
 
         top: calc(100% + 10px);
-        left: 0;
+        right: 0;
 
-        width: 100%;
+        width: 240px;
 
-        padding: 20px;
+        padding: 18px;
 
-        background:
-            rgba(8, 8, 8, 0.98);
+        background: #0d0d0d;
 
         border:
             1px solid #e31b3b;
 
-        border-radius: 25px;
+        border-radius: 18px;
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.5);
 
         opacity: 0;
 
         visibility: hidden;
 
+        pointer-events: none;
+
         transform:
-            translateY(-12px);
+            translateY(-10px);
 
         transition:
             opacity 0.3s ease,
@@ -611,14 +582,18 @@ nav a.active::after {
             transform 0.3s ease;
     }
 
+
     nav.a-res1 {
         opacity: 1;
 
         visibility: visible;
 
+        pointer-events: auto;
+
         transform:
             translateY(0);
     }
+
 
     nav ul {
         width: 100%;
@@ -627,7 +602,9 @@ nav a.active::after {
 
         flex-direction: column;
 
-        gap: 5px;
+        align-items: stretch;
+
+        gap: 4px;
     }
 
     nav li {
@@ -639,24 +616,33 @@ nav a.active::after {
 
         display: block;
 
-        padding: 13px 15px;
+        padding:
+            12px 14px;
 
-        border-radius: 10px;
+        border-radius: 8px;
 
         font-size: 14px;
-
-        text-align: center;
     }
 
     nav a:hover {
-        background:
-            rgba(227, 27, 59, 0.08);
+        background: #171717;
 
-        transform: none;
+        transform:
+            translateX(4px);
     }
 
     nav a::after {
         display: none;
+    }
+
+
+    /* ACTIVE */
+
+    nav a.active {
+        color: #ffffff;
+
+        background:
+            rgba(227, 27, 59, 0.12);
     }
 
 
@@ -718,7 +704,7 @@ nav a.active::after {
     }
 
     .site-name {
-        font-size: 8px;
+        font-size: 15px;
 
         margin-left: 36px;
     }
@@ -733,7 +719,10 @@ nav a.active::after {
 
 
     nav {
-        top: calc(100% + 8px);
+        top:
+            calc(100% + 8px);
+
+        width: 220px;
 
         padding: 15px;
 
@@ -847,7 +836,7 @@ nav a.active::after {
     }
 
     .site-name {
-        font-size: 7px;
+        font-size: 13px;
 
         margin-left: 31px;
     }
@@ -926,17 +915,26 @@ nav a.active::after {
 }
 
 
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-duration:
+            0.01ms !important;
 
-        transition-duration: 0.01ms !important;
+        animation-iteration-count:
+            1 !important;
 
-        scroll-behavior: auto !important;
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
     }
 }
