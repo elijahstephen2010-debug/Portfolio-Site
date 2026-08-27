@@ -1,3 +1,7 @@
+/* =====================================================
+   RESET
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +13,16 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0a0a0a;
-    color: #fff8f5;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #000000;
+    color: #ffffff;
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
@@ -38,15 +48,17 @@ header {
 
     gap: 20px;
 
-    background: rgba(5, 5, 5, 0.96);
+    background: rgba(5, 5, 5, 0.97);
 
     border: 1.5px solid #e31b3b;
+
     border-radius: 45px;
 
     box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35);
+        0 8px 30px rgba(0, 0, 0, 0.55);
 
-    animation: navSlide 0.8s ease both;
+    animation:
+        navSlide 0.8s ease both;
 }
 
 
@@ -63,11 +75,78 @@ header {
     align-items: center;
 }
 
+/* =====================================================
+   FOOD PROJECT IMAGE
+===================================================== */
+
+.food-image {
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+}
+
+/* =====================================================
+   NEXORA TECH AGENCY IMAGE
+===================================================== */
+
+.company-image {
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+}
+
+.company-image img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    z-index: 0;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.project-card:hover .company-image img {
+    transform: scale(1.05);
+}
+
+.food-image img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    z-index: 0;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.project-card:hover .food-image img {
+    transform: scale(1.05);
+}
+
 .logo {
     width: 75px;
     height: 65px;
 
-    background-image: url("./chioma-removebg-preview.png");
+    background-image:
+        url("./chioma-removebg-preview.png");
 
     background-size: contain;
     background-repeat: no-repeat;
@@ -94,6 +173,13 @@ header {
         Calibri,
         "Trebuchet MS",
         sans-serif;
+
+    transition:
+        color 0.3s ease;
+}
+
+.site-name:hover {
+    color: #e31b3b;
 }
 
 
@@ -130,7 +216,7 @@ nav a {
 
     padding: 10px 0;
 
-    color: #bdbdbd;
+    color: #aaaaaa;
 
     font-size: 15px;
     font-weight: 500;
@@ -157,7 +243,8 @@ nav a::after {
 
     border-radius: 10px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     transition:
         width 0.35s ease,
@@ -166,16 +253,22 @@ nav a::after {
 
 nav a:hover {
     color: #ffffff;
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 }
 
 nav a:hover::after {
     width: 100%;
+
+    box-shadow:
+        0 0 10px
+        rgba(227, 27, 59, 0.5);
 }
 
 
 /* =====================================================
-   ACTIVE PROJECT LINK
+   ACTIVE LINK
 ===================================================== */
 
 nav a.active {
@@ -186,12 +279,13 @@ nav a.active::after {
     width: 100%;
 
     box-shadow:
-        0 0 10px rgba(227, 27, 59, 0.5);
+        0 0 10px
+        rgba(227, 27, 59, 0.6);
 }
 
 
 /* =====================================================
-   MOBILE BUTTON
+   MOBILE MENU BUTTON
 ===================================================== */
 
 .menu-btn {
@@ -203,16 +297,37 @@ nav a.active::after {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #e31b3b;
+    border:
+        1px solid #e31b3b;
+
     border-radius: 50%;
 
-    background: #111111;
+    background: #0b0b0b;
 
     color: #ffffff;
 
     font-size: 20px;
 
     cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: #e31b3b;
+
+    color: #ffffff;
+
+    transform:
+        rotate(5deg);
+
+    box-shadow:
+        0 0 20px
+        rgba(227, 27, 59, 0.3);
 }
 
 
@@ -222,11 +337,9 @@ nav a.active::after {
 
 .project-page {
     width: 100%;
-    min-height: calc(100vh - 105px);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height:
+        calc(100vh - 105px);
 }
 
 
@@ -237,82 +350,26 @@ nav a.active::after {
 .project-section {
     width: 100%;
 
-    min-height: calc(100vh - 105px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     padding:
-        90px
-        5%
-        70px;
+        100px 5%
+        80px;
 }
 
 
 /* =====================================================
-   PROJECT CARD
+   PROJECT HEADING
 ===================================================== */
 
-.project-card {
-    width: 100%;
-    max-width: 760px;
+.project-heading {
+    max-width: 800px;
 
-    padding: 55px 50px;
+    margin:
+        0 auto 65px;
 
     text-align: center;
 
-    background: #111111;
-
-    border: 1px solid #303030;
-    border-radius: 24px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.45);
-
     animation:
-        fadeUp 0.9s ease forwards;
-}
-
-
-/* =====================================================
-   PROJECT ICON
-===================================================== */
-
-.project-icon {
-    width: 72px;
-    height: 72px;
-
-    margin:
-        0 auto 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #1a1a1a;
-
-    border: 1px solid #e31b3b;
-
-    border-radius: 20px;
-
-    font-size: 32px;
-
-    box-shadow:
-        0 0 25px rgba(227, 27, 59, 0.12);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-.project-icon:hover {
-    transform:
-        translateY(-6px)
-        rotate(-4deg);
-
-    box-shadow:
-        0 0 35px rgba(227, 27, 59, 0.25);
+        fadeUp 0.8s ease both;
 }
 
 
@@ -323,31 +380,47 @@ nav a.active::after {
 .section-label {
     display: inline-block;
 
-    padding: 8px 18px;
+    padding:
+        8px 18px;
 
-    border: 1px solid #e31b3b;
+    border:
+        1px solid #e31b3b;
 
     border-radius: 30px;
 
     color: #e31b3b;
 
     background:
-        rgba(227, 27, 59, 0.04);
+        rgba(227, 27, 59, 0.06);
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 1px;
 
     margin-bottom: 22px;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.section-label:hover {
+    background:
+        rgba(227, 27, 59, 0.12);
+
+    box-shadow:
+        0 0 20px
+        rgba(227, 27, 59, 0.12);
 }
 
 
 /* =====================================================
-   TITLE
+   HEADING TITLE
 ===================================================== */
 
-.project-card h1 {
+.project-heading h1 {
     color: #ffffff;
 
     font-size:
@@ -357,50 +430,508 @@ nav a.active::after {
 
     font-weight: 800;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+
+    letter-spacing: -2px;
 }
 
-.project-card h1 span {
-    display: block;
-
-    margin-top: 8px;
-
+.project-heading h1 span {
     color: #e31b3b;
+
+    transition:
+        text-shadow 0.3s ease;
 }
 
+.project-heading h1:hover span {
+    text-shadow:
+        0 0 25px
+        rgba(227, 27, 59, 0.45);
+}
 
-/* =====================================================
-   DESCRIPTION
-===================================================== */
+.project-heading p {
+    max-width: 600px;
 
-.project-card p {
-    max-width: 610px;
+    margin: auto;
 
-    margin:
-        0 auto 15px;
-
-    color: #a9a9a9;
+    color: #888888;
 
     font-size: 16px;
 
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
 
 /* =====================================================
-   PROJECT STATUS
+   PROJECT GRID
 ===================================================== */
 
-.project-status {
-    width: fit-content;
+.projects-grid {
+    width: 100%;
 
-    max-width: 100%;
+    max-width: 1100px;
 
-    margin:
-        25px auto 0;
+    margin: 0 auto;
 
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c0c0c,
+            #080808
+        );
+
+    border:
+        1px solid #252525;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.55);
+
+    transition:
+        transform 0.45s
+        cubic-bezier(.2,.8,.2,1),
+
+        box-shadow 0.45s ease,
+
+        border-color 0.45s ease;
+
+    animation:
+        fadeUp 0.8s ease both;
+}
+
+.project-card:nth-child(2) {
+    animation-delay:
+        0.15s;
+}
+
+.project-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(227, 27, 59, 0.7);
+
+    box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.7),
+
+        0 0 35px
+        rgba(227, 27, 59, 0.08);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.project-image {
+    height: 250px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom:
+        1px solid #252525;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform:
+        scale(1.015);
+}
+
+
+/* =====================================================
+   FOOD PROJECT VISUAL
+===================================================== */
+
+.food-image {
+    background:
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #180307 45%,
+            #e31b3b 100%
+        );
+}
+
+
+/* =====================================================
+   COMPANY PROJECT VISUAL
+===================================================== */
+
+.company-image {
+    background:
+        linear-gradient(
+            135deg,
+            #e31b3b 0%,
+            #25070d 48%,
+            #050505 100%
+        );
+}
+
+
+/* =====================================================
+   IMAGE DARK OVERLAY
+===================================================== */
+
+.project-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.45)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY CONTENT
+===================================================== */
+
+.image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+.project-number {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    opacity: 0.9;
+}
+
+.project-type {
     padding:
-        11px 18px;
+        7px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    backdrop-filter:
+        blur(5px);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.project-card:hover .project-type {
+    border-color: #ffffff;
+
+    background:
+        rgba(0, 0, 0, 0.4);
+}
+
+
+/* =====================================================
+   BIG IMAGE TITLE
+===================================================== */
+
+.image-title {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    line-height: 0.9;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        transform 0.45s ease;
+}
+
+.project-card:hover .image-title {
+    transform:
+        translateY(-6px)
+        scale(1.03);
+}
+
+.image-title span {
+    font-size: 25px;
+
+    font-weight: 300;
+
+    letter-spacing: 5px;
+}
+
+.image-title strong {
+    font-size: 48px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.project-content {
+    padding: 30px;
+}
+
+.project-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+
+/* =====================================================
+   PROJECT ICON
+===================================================== */
+
+.project-icon {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(227, 27, 59, 0.08);
+
+    border:
+        1px solid
+        rgba(227, 27, 59, 0.4);
+
+    border-radius: 14px;
+
+    font-size: 22px;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover .project-icon {
+    transform:
+        rotate(-5deg)
+        scale(1.08);
+
+    background:
+        #e31b3b;
+
+    box-shadow:
+        0 0 20px
+        rgba(227, 27, 59, 0.25);
+}
+
+
+/* =====================================================
+   PROJECT CATEGORY
+===================================================== */
+
+.project-category {
+    color: #e31b3b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =====================================================
+   PROJECT TITLE
+===================================================== */
+
+.project-content h2 {
+    margin:
+        0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-card:hover .project-content h2 {
+    color: #e31b3b;
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =====================================================
+   PROJECT DESCRIPTION
+===================================================== */
+
+.project-content p {
+    color: #8d8d8d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   TECHNOLOGY STACK
+===================================================== */
+
+.tech-stack {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.tech-stack span {
+    padding:
+        7px 11px;
+
+    background: #111111;
+
+    border:
+        1px solid #292929;
+
+    border-radius: 7px;
+
+    color: #aaaaaa;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tech-stack span:hover {
+    border-color: #e31b3b;
+
+    color: #ffffff;
+
+    background:
+        rgba(227, 27, 59, 0.08);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   GITHUB BUTTON
+===================================================== */
+
+.project-buttons {
+    width: 100%;
+}
+
+.project-btn {
+    width: 100%;
+
+    min-height: 48px;
 
     display: flex;
 
@@ -410,69 +941,119 @@ nav a.active::after {
 
     gap: 10px;
 
-    background: #181818;
-
-    border: 1px solid #303030;
-
-    border-radius: 30px;
-}
-
-.status-dot {
-    width: 9px;
-    height: 9px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
     background: #e31b3b;
 
-    box-shadow:
-        0 0 10px rgba(227, 27, 59, 0.7);
-}
+    border:
+        1px solid #e31b3b;
 
-.project-status span {
-    color: #a9a9a9;
+    border-radius: 25px;
+
+    color: #ffffff;
 
     font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-btn span {
+    font-size: 17px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.project-btn:hover {
+    background:
+        transparent;
+
+    border-color:
+        #e31b3b;
+
+    color:
+        #e31b3b;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(227, 27, 59, 0.15);
+}
+
+.project-btn:hover span {
+    transform:
+        translate(4px, -2px);
 }
 
 
 /* =====================================================
-   BUTTON
+   BOTTOM CTA
+===================================================== */
+
+.project-cta {
+    margin-top: 75px;
+
+    text-align: center;
+
+    animation:
+        fadeUp 1s ease both;
+}
+
+.project-cta p {
+    margin-bottom: 15px;
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CTA BUTTON
 ===================================================== */
 
 .btn {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
 
-    margin-top: 25px;
-
     padding:
         14px 25px;
 
-    background: #e31b3b;
+    background:
+        #e31b3b;
 
-    border: 1px solid #e31b3b;
+    border:
+        1px solid #e31b3b;
 
     border-radius: 30px;
 
     color: #ffffff;
 
     font-size: 14px;
+
     font-weight: 700;
 
     text-decoration: none;
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 .btn span {
@@ -483,18 +1064,23 @@ nav a.active::after {
 }
 
 .btn:hover {
-    background: transparent;
+    background:
+        transparent;
 
-    color: #e31b3b;
+    color:
+        #e31b3b;
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 10px 25px rgba(227, 27, 59, 0.15);
+        0 12px 30px
+        rgba(227, 27, 59, 0.18);
 }
 
 .btn:hover span {
-    transform: translateX(5px);
+    transform:
+        translateX(5px);
 }
 
 
@@ -518,6 +1104,7 @@ nav a.active::after {
             translateY(0);
     }
 }
+
 
 @keyframes navSlide {
 
@@ -559,6 +1146,7 @@ nav a.active::after {
 
     .site-logo {
         width: 140px;
+
         min-width: 140px;
 
         height: 62px;
@@ -566,6 +1154,7 @@ nav a.active::after {
 
     .logo {
         width: 60px;
+
         height: 57px;
     }
 
@@ -576,15 +1165,20 @@ nav a.active::after {
     }
 
 
+    /* MOBILE BUTTON */
+
     .menu-btn {
         display: flex;
     }
 
 
+    /* MOBILE NAV */
+
     header nav {
         position: absolute;
 
-        top: calc(100% + 10px);
+        top:
+            calc(100% + 10px);
 
         right: 0;
 
@@ -592,14 +1186,17 @@ nav a.active::after {
 
         padding: 18px;
 
-        background: #0d0d0d;
+        background:
+            #080808;
 
-        border: 1px solid #e31b3b;
+        border:
+            1px solid #e31b3b;
 
         border-radius: 18px;
 
         box-shadow:
-            0 15px 40px rgba(0, 0, 0, 0.5);
+            0 15px 40px
+            rgba(0, 0, 0, 0.7);
 
         opacity: 0;
 
@@ -641,9 +1238,11 @@ nav a.active::after {
         gap: 4px;
     }
 
+
     nav li {
         width: 100%;
     }
+
 
     nav a {
         width: 100%;
@@ -658,42 +1257,54 @@ nav a.active::after {
         font-size: 14px;
     }
 
+
     nav a:hover {
-        background: #171717;
+        background:
+            rgba(227, 27, 59, 0.08);
 
         transform:
             translateX(4px);
     }
 
+
     nav a::after {
         display: none;
     }
 
+
     nav a.active {
         background:
-            rgba(227, 27, 59, 0.12);
+            rgba(227, 27, 59, 0.1);
+
+        color:
+            #e31b3b;
     }
 
 
     /* PROJECT */
 
     .project-section {
-        min-height:
-            calc(100vh - 90px);
-
         padding:
-            80px
-            5%
-            50px;
+            80px 5%
+            60px;
     }
 
-    .project-card {
-        padding:
-            45px 30px;
+
+    .project-heading {
+        margin-bottom:
+            45px;
     }
 
-    .project-card h1 {
-        font-size: 52px;
+
+    .projects-grid {
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            620px;
+
+        gap:
+            25px;
     }
 }
 
@@ -716,20 +1327,26 @@ nav a.active::after {
         padding:
             5px 4%;
 
-        border-radius: 30px;
+        border-radius:
+            30px;
     }
+
 
     .site-logo {
         width: 115px;
+
         min-width: 115px;
 
         height: 55px;
     }
 
+
     .logo {
         width: 50px;
+
         height: 50px;
     }
+
 
     .site-name {
         font-size: 15px;
@@ -740,6 +1357,7 @@ nav a.active::after {
 
     .menu-btn {
         width: 39px;
+
         height: 39px;
 
         font-size: 18px;
@@ -750,50 +1368,38 @@ nav a.active::after {
         top:
             calc(100% + 8px);
 
-        width: 220px;
+        width:
+            220px;
 
-        padding: 15px;
+        padding:
+            15px;
 
-        border-radius: 22px;
+        border-radius:
+            22px;
     }
+
 
     nav a {
         padding:
             12px;
 
-        font-size: 13px;
+        font-size:
+            13px;
     }
 
 
     /* PROJECT */
 
     .project-section {
-        min-height:
-            calc(100vh - 82px);
-
         padding:
-            70px
-            5%
+            70px 5%
+            40px;
+    }
+
+
+    .project-heading {
+        margin-bottom:
             35px;
-    }
-
-    .project-card {
-        padding:
-            35px 20px;
-
-        border-radius: 18px;
-    }
-
-
-    .project-icon {
-        width: 60px;
-        height: 60px;
-
-        font-size: 27px;
-
-        border-radius: 17px;
-
-        margin-bottom: 20px;
     }
 
 
@@ -801,43 +1407,95 @@ nav a.active::after {
         padding:
             7px 13px;
 
-        font-size: 9px;
-
-        margin-bottom: 17px;
+        font-size:
+            9px;
     }
 
 
-    .project-card h1 {
-        font-size: 38px;
+    .project-heading h1 {
+        font-size:
+            42px;
 
-        line-height: 1.08;
+        line-height:
+            1.08;
 
-        margin-bottom: 20px;
+        letter-spacing:
+            -1px;
     }
 
 
-    .project-card p {
-        font-size: 14px;
-
-        line-height: 1.65;
+    .project-heading p {
+        font-size:
+            14px;
     }
 
 
-    .project-status {
+    .project-image {
+        height:
+            210px;
+    }
+
+
+    .project-content {
         padding:
-            10px 13px;
+            24px 20px;
     }
 
-    .project-status span {
-        font-size: 10px;
+
+    .project-content h2 {
+        font-size:
+            27px;
+    }
+
+
+    .project-content p {
+        font-size:
+            13px;
+    }
+
+
+    .image-title span {
+        font-size:
+            20px;
+    }
+
+
+    .image-title strong {
+        font-size:
+            38px;
+    }
+
+
+    .project-top {
+        align-items:
+            flex-start;
+    }
+
+
+    .project-category {
+        font-size:
+            9px;
+
+        text-align:
+            right;
+    }
+
+
+    .project-cta {
+        margin-top:
+            50px;
     }
 
 
     .btn {
+        width:
+            100%;
+
         padding:
             13px 20px;
 
-        font-size: 13px;
+        font-size:
+            13px;
     }
 }
 
@@ -849,56 +1507,80 @@ nav a.active::after {
 @media (max-width: 375px) {
 
     header {
-        width: 96%;
+        width:
+            96%;
 
-        min-height: 64px;
+        min-height:
+            64px;
 
         padding:
             4px 3%;
 
-        border-radius: 28px;
+        border-radius:
+            28px;
 
-        gap: 5px;
+        gap:
+            5px;
     }
+
 
     .site-logo {
-        width: 100px;
-        min-width: 100px;
+        width:
+            100px;
 
-        height: 50px;
+        min-width:
+            100px;
+
+        height:
+            50px;
     }
+
 
     .logo {
-        width: 45px;
-        height: 47px;
+        width:
+            45px;
+
+        height:
+            47px;
     }
 
-    .site-name {
-        font-size: 13px;
 
-        margin-left: 31px;
+    .site-name {
+        font-size:
+            13px;
+
+        margin-left:
+            31px;
     }
 
 
     .menu-btn {
-        width: 37px;
-        height: 37px;
+        width:
+            37px;
 
-        font-size: 17px;
+        height:
+            37px;
+
+        font-size:
+            17px;
     }
 
 
     header nav {
-        padding: 12px;
+        padding:
+            12px;
 
-        border-radius: 20px;
+        border-radius:
+            20px;
     }
+
 
     nav a {
         padding:
             11px;
 
-        font-size: 12px;
+        font-size:
+            12px;
     }
 
 
@@ -906,60 +1588,77 @@ nav a.active::after {
 
     .project-section {
         padding:
-            60px
-            4%
+            60px 4%
             30px;
     }
 
-    .project-card {
-        padding:
-            30px 16px;
 
-        border-radius: 16px;
+    .project-heading h1 {
+        font-size:
+            35px;
+    }
+
+
+    .project-heading p {
+        font-size:
+            13px;
+    }
+
+
+    .project-image {
+        height:
+            180px;
+    }
+
+
+    .project-content {
+        padding:
+            20px 16px;
     }
 
 
     .project-icon {
-        width: 55px;
-        height: 55px;
+        width:
+            43px;
 
-        font-size: 24px;
+        height:
+            43px;
+
+        font-size:
+            20px;
     }
 
 
-    .section-label {
-        font-size: 8px;
-
-        padding:
-            6px 11px;
+    .project-category {
+        font-size:
+            8px;
     }
 
 
-    .project-card h1 {
-        font-size: 32px;
+    .project-content h2 {
+        font-size:
+            24px;
     }
 
 
-    .project-card p {
-        font-size: 13px;
+    .project-content p {
+        font-size:
+            12px;
     }
 
 
-    .project-status {
-        width: 100%;
+    .tech-stack span {
+        font-size:
+            9px;
     }
 
 
-    .project-status span {
-        font-size: 9px;
-    }
+    .project-btn {
+        min-height:
+            45px;
 
-
-    .btn {
-        width: 100%;
-
-        padding:
-            12px 16px;
+        font-size:
+            11px;
     }
 }
 
