@@ -1,342 +1,262 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Projects | Dynamic Design</title>
-
+    <meta name="description" content="Explore web development and design projects by Dynamic Design.">
+    <title>My Projects | Dynamic Design</title>
     <link rel="stylesheet" href="./project.css">
 </head>
-
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR -->
     <header>
+        <a href="index.html" class="site-logo">
+            <div class="logo"></div>
+            <span class="site-name">Dynamic Design</span>
+        </a>
 
-        <div class="site-logo">
+        <button class="menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                onclick="nav()">☰</button>
 
-            <div class="logo">
-                <h2 class="site-name">Dynamic Design</h2>
-            </div>
-
-        </div>
-
-
-        <nav class="a-res">
-
+        <nav>
             <ul>
-
-                <li>
-                    <a href="./index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./about.html">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./skills.html">
-                        Skill
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./project.html" class="active">
-                        Project
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./experience.html">
-                        Experience
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./contact.html">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
         </nav>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            class="menu-btn"
-            aria-label="Open navigation menu"
-            onclick="nav()"
-        >
-            ☰
-        </button>
-
     </header>
 
-
-    <!-- =========================
-         PROJECT PAGE
-    ========================== -->
-
+    <!-- PROJECT PAGE -->
     <main class="project-page">
-
         <section class="project-section">
 
-
-            <!-- PAGE INTRO -->
-
+            <!-- HEADING -->
             <div class="project-heading">
-
-                <span class="section-label">
-                    MY PROJECTS
-                </span>
-
-                <h1>
-                    Things I've
-                    <span>Built.</span>
-                </h1>
-
+                <span class="section-label">MY PORTFOLIO</span>
+                <h1>Featured <span>Projects</span></h1>
                 <p>
-                    A collection of websites and digital experiences
-                    I've designed and developed.
+                    Explore some of the websites and digital experiences
+                    I've created through design, creativity and development.
                 </p>
-
             </div>
 
-
-            <!-- =========================
-                 PROJECTS
-            ========================== -->
-
+            <!-- PROJECT CARDS -->
             <div class="projects-grid">
 
-
-                <!-- =========================
-                     FOOD ORDERING PROJECT
-                ========================== -->
-
+                <!-- PROJECT 1: BITERUSH -->
                 <article class="project-card">
-
                     <div class="project-image food-image">
-                         <img src="./2df120a5-69c7-4918-b63c-4a06d9c081f8.png" alt="">
+                        <img
+                            src="./2df120a5-69c7-4918-b63c-4a06d9c081f8.png"
+                            alt="BiteRush food ordering website preview"
+                        >
+
                         <div class="image-overlay">
-
-
-                            <span class="project-number">
-                                01
-                            </span>
-
-                            <span class="project-type">
-                                WEB APPLICATION
-                            </span>
-
+                            <span class="project-number">01</span>
+                            <span class="project-type">FOOD WEBSITE</span>
                         </div>
 
                         <div class="image-title">
-                            <span>FOOD</span>
-                            <strong>ORDERING</strong>
+                            <span>BITE</span>
+                            <strong>RUSH</strong>
                         </div>
-
                     </div>
 
-
                     <div class="project-content">
-
                         <div class="project-top">
-
-                            <div class="project-icon">
-                                🍔
-                            </div>
-
-                            <span class="project-category">
-                                FOOD & DELIVERY
-                            </span>
-
+                            <div class="project-icon" aria-hidden="true">🍔</div>
+                            <span class="project-category">FOOD & DELIVERY</span>
                         </div>
 
-
-                        <h2>
-                            BiteRush
-                        </h2>
-
-
+                        <h2>BiteRush</h2>
                         <p>
-                            A modern food ordering website where users
-                            can explore meals, view food details and
-                            experience a smooth online ordering interface.
+                            A modern food ordering website designed to make
+                            exploring meals and ordering food simple and convenient.
                         </p>
 
-
-                        <!-- TECHNOLOGIES -->
-
                         <div class="tech-stack">
-
                             <span>HTML</span>
-
                             <span>CSS</span>
-
                             <span>JavaScript</span>
-
                         </div>
 
-
-                        <!-- GITHUB -->
-
                         <div class="project-buttons">
-
                             <a
                                 href="https://elijahstephen2010-debug.github.io/Food-site-demo/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="project-btn"
                             >
-                                View on GitHub
-                                <span>↗</span>
+                                Visit Site <span aria-hidden="true">↗</span>
                             </a>
-
                         </div>
-
                     </div>
-
                 </article>
 
-
-
-                <!-- =========================
-                     COMPANY PROJECT
-                ========================== -->
-
+                <!-- PROJECT 2: NEXORA TECH -->
                 <article class="project-card">
+                    <div class="project-image company-image">
+                        <img
+                            src="./cdfffc69-c4b4-484e-99a6-f6aaf600460c.png"
+                            alt="Nexora Tech company website preview"
+                        >
 
-                 <div class="project-image company-image">
+                        <div class="image-overlay">
+                            <span class="project-number">02</span>
+                            <span class="project-type">BUSINESS WEBSITE</span>
+                        </div>
 
-    <img
-        src="./cdfffc69-c4b4-484e-99a6-f6aaf600460c.png"
-        alt="Nexora Tech agency"
-    >
-
-    <div class="image-overlay">
-
-        <span class="project-number">
-            02
-        </span>
-
-        <span class="project-type">
-            CORPORATE WEBSITE
-        </span>
-
-    </div>
-
-    <div class="image-title">
-        <span>TECH</span>
-        <strong>AGENCY</strong>
-    </div>
-
-</div>
-
+                        <div class="image-title">
+                            <span>NEXORA</span>
+                            <strong>TECH</strong>
+                        </div>
+                    </div>
 
                     <div class="project-content">
-
                         <div class="project-top">
-
-                            <div class="project-icon">
-                                💼
-                            </div>
-
-                            <span class="project-category">
-                                TECH AGENCY
-                            </span>
-
+                            <div class="project-icon" aria-hidden="true">💻</div>
+                            <span class="project-category">TECHNOLOGY</span>
                         </div>
 
-
-                        <h2>
-                            Nexora Tech
-                        </h2>
-
-
+                        <h2>Nexora Tech</h2>
                         <p>
-                            A professional technology agency website
-                            designed to showcase company services,
-                            projects, team members and career opportunities.
+                            A professional technology company website built
+                            to showcase services, communicate value and establish
+                            a strong digital presence.
                         </p>
 
-
-                        <!-- TECHNOLOGIES -->
-
                         <div class="tech-stack">
-
                             <span>HTML</span>
-
                             <span>CSS</span>
-
                             <span>JavaScript</span>
-
                         </div>
 
-
-                        <!-- GITHUB -->
-
                         <div class="project-buttons">
-
                             <a
                                 href="https://elijahstephen2010-debug.github.io/Company-site-demo/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="project-btn"
                             >
-                                View on GitHub
-                                <span>↗</span>
+                                Visit Site <span aria-hidden="true">↗</span>
                             </a>
-
                         </div>
-
                     </div>
-
                 </article>
 
+                <!-- PROJECT 3: BELLAS COLLECTION -->
+                <article class="project-card">
+                    <div class="project-image company-image">
+                        <div class="image-overlay">
+                            <span class="project-number">03</span>
+                            <span class="project-type">E-COMMERCE WEBSITE</span>
+                        </div>
+
+                        <div class="image-title">
+                            <span>BELLAS</span>
+                            <strong>COLLECTION</strong>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-top">
+                            <div class="project-icon" aria-hidden="true">🛍️</div>
+                            <span class="project-category">FASHION & RETAIL</span>
+                        </div>
+
+                        <h2>Bellas Collection</h2>
+                        <p>
+                            A stylish fashion website designed to showcase
+                            products and create an engaging online shopping experience.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-buttons">
+                            <a
+                                href="https://bellas-collection.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-btn"
+                            >
+                                Visit Site <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4: JACOBABAS PORTFOLIO -->
+                <article class="project-card">
+                    <div class="project-image food-image">
+                        <div class="image-overlay">
+                            <span class="project-number">04</span>
+                            <span class="project-type">PERSONAL PORTFOLIO</span>
+                        </div>
+
+                        <div class="image-title">
+                            <span>JACOBABAS</span>
+                            <strong>PORTFOLIO</strong>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-top">
+                            <div class="project-icon" aria-hidden="true">👨‍💻</div>
+                            <span class="project-category">PORTFOLIO DESIGN</span>
+                        </div>
+
+                        <h2>JacobAbas Portfolio</h2>
+                        <p>
+                            A personal portfolio website created to present
+                            professional skills, projects and experience through
+                            a clean digital profile.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-buttons">
+                            <a
+                                href="https://jacobabas-portfolio.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-btn"
+                            >
+                                Visit Site <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
             </div>
 
-
-            <!-- =========================
-                 CONTACT CTA
-            ========================== -->
-
+            <!-- BOTTOM CTA -->
             <div class="project-cta">
-
-                <p>
-                    Have a project in mind?
-                </p>
-
-                <a
-                    href="./contact.html"
-                    class="btn"
-                >
-                    Let's Work Together
-                    <span>→</span>
+                <p>Have a project in mind? Let's work together.</p>
+                <a href="contact.html" class="btn">
+                    Let's Talk <span aria-hidden="true">→</span>
                 </a>
-
             </div>
 
         </section>
-
     </main>
-
 
     <script src="./project.js"></script>
 
 </body>
-
 </html>
